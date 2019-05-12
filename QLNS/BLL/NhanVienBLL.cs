@@ -17,7 +17,7 @@ namespace QLNS.BLL
         SqlConnection conn = new SqlConnection();
         public NhanVienBLL()
         {
-            string connString = @"Data Source=DESKTOP-34CKI58\HOAI;Initial Catalog=QLNS;Integrated Security=True";
+            string connString = @"Data Source=PC;Initial Catalog=QLNS;Integrated Security=True";
 
             conn.ConnectionString = connString;
             conn.Open();
