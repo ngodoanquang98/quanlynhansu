@@ -14,7 +14,8 @@ namespace QLNS.BLL
 
         public static DataProvider Instance
         {
-            get { if (instance == null) instance = new DataProvider(); return instance; }
+            get {
+                if (instance == null) instance = new DataProvider(); return instance; }
             private set { instance = value; }
         }
 
