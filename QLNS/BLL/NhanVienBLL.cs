@@ -17,6 +17,7 @@ namespace QLNS.BLL
         SqlConnection conn = new SqlConnection();
         public NhanVienBLL()
         { 
+
             string connString = @"Data Source=DESKTOP-34CKI58\HOAI;Initial Catalog=QLNS;Integrated Security=True";
 
             conn.ConnectionString = connString;
@@ -40,11 +41,11 @@ namespace QLNS.BLL
         }
         public bool Insert(NhanVien nv)
         {
-           
-            int result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemNV @HoTen , @QueQuan , @NgaySinh , @email , @MaPB , @SDT , @CMT , @NgayBD , @SoHD", new object[] { nv.HoTen,nv.QueQuan, nv.NgaySinh, nv.email, nv.MaPB, nv.SDT, nv.CMT, nv.NgayBatDau, nv.SoHD });
-           
+
+            int result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemNV @HoTen , @QueQuan , @NgaySinh , @email , @MaPB , @SDT , @CMT , @NgayBD , @SoHD", new object[] { nv.HoTen, nv.QueQuan, nv.NgaySinh, nv.email, nv.MaPB, nv.SDT, nv.CMT, nv.NgayBatDau, nv.SoHD });
+
             return result > 0;
-           
+
         }
         public bool Update(NhanVien nv, ChiTietCV ct)
         {
