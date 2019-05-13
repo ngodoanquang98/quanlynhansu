@@ -16,8 +16,9 @@ namespace QLNS.BLL
         private static NhanVienBLL instance;
         SqlConnection conn = new SqlConnection();
         public NhanVienBLL()
-        { 
-            string connString = @"Data Source=PC;Initial Catalog=QLNS;Integrated Security=True";
+        {
+
+            string connString = @"Data Source=DESKTOP-34CKI58\HOAI;Initial Catalog=QLNS;Integrated Security=True";
 
             conn.ConnectionString = connString;
             conn.Open();
@@ -40,15 +41,11 @@ namespace QLNS.BLL
         }
         public bool Insert(NhanVien nv)
         {
-            string query = string.Format("insert into NhanVien(HoTen,QueQuan,NgaySinh,email,MaPB,SDT,CMT,NgayBatDau,SoHD) values (N'{0}',N'{1}','{2}',N'{3}',{4},N'{5}',N'{6}','{7}',{8})",nv.HoTen, nv.NgaySinh,
-                nv.QueQuan, nv.email, nv.MaPB, nv.SDT, nv.CMT, nv.NgayBatDau, nv.SoHD );
-            SqlCommand com = new SqlCommand(query, conn);
-            if (com.ExecuteNonQuery() > 0) return true;
-            return false;
-            //result = DataProvider.Instance.ExecuteNonQuery("insert into ChiTietCV values ({0},{1},{2},{3}",new object[] { ct.MaCV, ct.MaNV, ct.MaPB, ct.NgayBD });
-            
-            //if (result <= 0) return false;
-           
+
+            int result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemNV @HoTen , @QueQuan , @NgaySinh , @email , @MaPB , @SDT , @CMT , @NgayBD , @SoHD", new object[] { nv.HoTen, nv.QueQuan, nv.NgaySinh, nv.email, nv.MaPB, nv.SDT, nv.CMT, nv.NgayBatDau, nv.SoHD });
+
+            return result > 0;
+
         }
         public bool Update(NhanVien nv, ChiTietCV ct)
         {
