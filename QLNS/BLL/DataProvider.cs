@@ -15,15 +15,14 @@ namespace QLNS.BLL
         public static DataProvider Instance
         {
             get {
-                if (instance == null) instance = new DataProvider(); return instance; }
+                if (instance == null) instance = new DataProvider(); return instance;
+            }
             private set { instance = value; }
         }
 
         private DataProvider() { }
 
         string connectionSTR = @"Data Source=pc;Initial Catalog=QLNS;Integrated Security=True";
-        string connectionSTR = @"Data Source=PC;Initial Catalog=QLNS;Integrated Security=True";
-        
         // @"Data Source=DESKTOP-34CKI58\HOAI;Initial Catalog=QLNS;Integrated Security=True";
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
