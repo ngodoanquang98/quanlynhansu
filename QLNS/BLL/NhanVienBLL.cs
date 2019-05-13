@@ -51,10 +51,10 @@ namespace QLNS.BLL
         {
             int result = DataProvider.Instance.ExecuteNonQuery("update NhanVien set @nv.HoTen,@nv.MaPB,@nv.NgaySinh,@nv.QueQuan, @nv.email, @@nv.CMT, @nv.SoHD, @nv.NgayBatDau where MaNV = @nv.MaNV ", new object[]{ nv.HoTen, nv.MaPB, nv.NgaySinh,
                 nv.QueQuan, nv.email, nv.SDT, nv.CMT, nv.SoHD, nv.NgayBatDau, nv.MaNV });
-            if (result <= 0) return false;
-            result = DataProvider.Instance.ExecuteNonQuery("insert into ChiTietCV values ({0},{1},{2},{3}",new object[] { ct.MaCV, ct.MaNV, ct.MaPB, ct.NgayBD });
-            if (result <= 0) return false;
-            return true;
+            //if (result <= 0) return false;
+            //result = DataProvider.Instance.ExecuteNonQuery("insert into ChiTietCV values ({0},{1},{2},{3}",new object[] { ct.MaCV, ct.MaNV, ct.MaPB, ct.NgayBD });
+            //if (result <= 0) return false;
+            //return true;
         }
         public List<NhanVien> SearchKH(string str)
         {
