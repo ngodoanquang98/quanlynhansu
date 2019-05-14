@@ -18,7 +18,7 @@ namespace QLNS.BLL
         public NhanVienBLL()
         {
 
-            string connString = @"Data Source=pc;Initial Catalog=QLNS;Integrated Security=True";
+            string connString = @"Data Source=DESKTOP-34CKI58\HOAI;Initial Catalog=QLNS;Integrated Security=True";
 
             conn.ConnectionString = connString;
             conn.Open();
@@ -47,14 +47,14 @@ namespace QLNS.BLL
             return result > 0;
 
         }
-        public bool Update (NhanVien nv, ChiTietCV ct)
+        public bool Update (NhanVien nv)
         {
             int result = DataProvider.Instance.ExecuteNonQuery("update NhanVien set @nv.HoTen,@nv.MaPB,@nv.NgaySinh,@nv.QueQuan, @nv.email, @@nv.CMT, @nv.SoHD, @nv.NgayBatDau where MaNV = @nv.MaNV ", new object[]{ nv.HoTen, nv.MaPB, nv.NgaySinh,
                 nv.QueQuan, nv.email, nv.SDT, nv.CMT, nv.SoHD, nv.NgayBatDau, nv.MaNV });
            
             //result = DataProvider.Instance.ExecuteNonQuery("insert into ChiTietCV values ({0},{1},{2},{3}",new object[] { ct.MaCV, ct.MaNV, ct.MaPB, ct.NgayBD });
             //if (result <= 0) return false;
-            //return true;
+            return true;
         }
         public List<NhanVien> SearchKH(string str)
         {
