@@ -41,11 +41,11 @@ namespace QLNS.GUI
             cbbPhongBan.DisplayMember = "TenPB";
             cbbPhongBan.ValueMember = "MaPB";
             cbbPhongBan.DataSource = dataTable;
-            adapter = new SqlDataAdapter("SELECT MaPB,TenPB FROM PhongBan", sqlConnection);
+            adapter = new SqlDataAdapter("SELECT MaLHD,TenLHD FROM LoaiHopDong", sqlConnection);
             DataTable dT = new DataTable();
-            adapter.Fill(dataTable);
-            cbbLoaiHD.DisplayMember = "TenPB";
-            cbbLoaiHD.ValueMember = "MaPB";
+            adapter.Fill(dT);
+            cbbLoaiHD.DisplayMember = "TenLHD";
+            cbbLoaiHD.ValueMember = "MaLHD";
             cbbLoaiHD.DataSource = dT;
 
         }
@@ -73,7 +73,7 @@ namespace QLNS.GUI
         private void TabConDSNV_Click(object sender, EventArgs e)
         {
 
-            ListNv.DataSource = NhanVienBLL.Instance.LayDL();
+            ListNv.DataSource = NhanVienDAO.Instance.LayDL();
             dgvNhanVien.DataSource = ListNv;
         }
 
@@ -82,7 +82,7 @@ namespace QLNS.GUI
             if (txtTimKiem.Text == "") MessageBox.Show("Chưa nhập thông tin tìm kiếm");
             string str = txtTimKiem.Text;
             dgvNhanVien.DataSource = ListNv;
-            ListNv.DataSource = NhanVienBLL.Instance.SearchKH(str);
+            ListNv.DataSource = NhanVienDAO.Instance.SearchKH(str);
         }
 
         private void BtnThemMoi_Click(object sender, EventArgs e)
@@ -104,26 +104,28 @@ namespace QLNS.GUI
                 return;
             }
             long a, b, c, d;
-            long.TryParse(cbbPhongBan.Text, out a);
+            long.TryParse(cbbPhongBan.SelectedValue.ToString(), out a);
             long.TryParse(cbbLoaiHD.Text, out b);
             long.TryParse(cbbTrangThai.Text, out c);
             if (long.TryParse(lblMaNV.Text,out d))
             {
                 NhanVien n = new NhanVien(d, txtHoTen.Text, a, txtQue.Text, dtpNgaySinh.Value,
-                     txtEmail.Text, dtpNBD.ToString(), txtSDT.Text, b, dtpNBD.Value);
-                NhanVienBLL nvb = new NhanVienBLL();
+                     txtEmail.Text, dtpNBD.ToString(), txtSDT.Text, dtpNBD.Value);
+                NhanVienDAO nvb = new NhanVienDAO();
                 if (!nvb.Update(n)) MessageBox.Show("Sai cmnr!");
             }
             NhanVien nv = new NhanVien(0, txtHoTen.Text, a,txtQue.Text, dtpNgaySinh.Value,
-                 txtEmail.Text, dtpNBD.ToString(), txtSDT.Text, b, dtpNBD.Value);
+                 txtEmail.Text, dtpNBD.ToString(), txtSDT.Text, dtpNBD.Value);
 
-            NhanVienBLL bll = new NhanVienBLL();
+            NhanVienDAO bll = new NhanVienDAO();
             if (!bll.Insert(nv)) MessageBox.Show("Sai cmnr");
         }
 
         private void DgvNhanVien_DoubleClick(object sender, EventArgs e)
-        {
+        { 
             int index = dgvNhanVien.Rows.IndexOf(dgvNhanVien.SelectedRows[0]);
+
+            lblMaNV.Text = dgvNhanVien.Rows[index].Cells["MaNV"].Value.ToString();
             txtCMT.Text = dgvNhanVien.Rows[index].Cells["CMT"].Value.ToString();
             dtpNBD.Value = DateTime.Parse(dgvNhanVien.Rows[index].Cells["NgayBatDau"].Value.ToString());
             dtpNgaySinh.Value = DateTime.Parse(dgvNhanVien.Rows[index].Cells["NgaySinh"].Value.ToString());
@@ -131,6 +133,7 @@ namespace QLNS.GUI
             txtHoTen.Text = dgvNhanVien.Rows[index].Cells["HoTen"].Value.ToString();
             txtQue.Text = dgvNhanVien.Rows[index].Cells["QueQuan"].Value.ToString();
             txtSDT.Text = dgvNhanVien.Rows[index].Cells["SDT"].Value.ToString();
+            cbbPhongBan.SelectedValue = dgvNhanVien.Rows[index].Cells["MaPB"].Value.ToString();
         }
     }
 }
