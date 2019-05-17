@@ -15,6 +15,7 @@ namespace QLNS.GUI
 {
     public partial class FrmChamCong : Form
     {
+        BindingSource ListCC = new BindingSource();
         SqlConnection sqlConnection = new SqlConnection();
         public FrmChamCong()
         {
@@ -71,7 +72,31 @@ namespace QLNS.GUI
             long.TryParse(txtMaNV.Text, out c);
             ChamCong cc = new ChamCong(0, dtpNgay.Value, b, c);
             ChamCongDAO dao = new ChamCongDAO();
-            if(!dao.Insert(cc)) MessageBox.Show("Sai cmnr!") ;
+            if (!dao.Insert(cc)) MessageBox.Show("Sai cmnr!");
+            else MessageBox.Show("Thêm thành công!");
+            txtMaNV.Text = "";
+        }
+
+        private void TabControl1_Click(object sender, EventArgs e)
+        {
+            ListCC.DataSource = ChamCongDAO.Instance.LayDL(DateTime.Now);
+            dataGridView1.DataSource = ListCC;
+        }
+
+        private void DateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            ListCC.DataSource = ChamCongDAO.Instance.LayDL(dateTimePicker2.Value);
+            dataGridView1.DataSource = ListCC;
+            dataGridView1.Refresh();
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            long a;
+            long.TryParse(textBox1.Text, out a);
+            ListCC.DataSource = ChamCongDAO.Instance.LayDL(DateTime.Now);
+            dataGridView1.DataSource = ListCC;
+            dataGridView1.Refresh();
         }
     }
 }

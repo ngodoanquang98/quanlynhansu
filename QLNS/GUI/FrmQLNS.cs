@@ -84,8 +84,7 @@ namespace QLNS.GUI
             dgvNhanVien.DataSource = ListNv;
             ListNv.DataSource = NhanVienDAO.Instance.SearchKH(str);
         }
-
-        private void BtnThemMoi_Click(object sender, EventArgs e)
+        private void XoaTrang()
         {
             txtCMT.Text = "";
             txtEmail.Text = "";
@@ -94,6 +93,10 @@ namespace QLNS.GUI
             txtQue.Text = "";
             lblMaNV.Text = "";
             lblSoHD.Text = "";
+        }
+        private void BtnThemMoi_Click(object sender, EventArgs e)
+        {
+            XoaTrang();
         }
 
         private void BtnLuu_Click(object sender, EventArgs e)
@@ -119,6 +122,10 @@ namespace QLNS.GUI
 
             NhanVienDAO bll = new NhanVienDAO();
             if (!bll.Insert(nv)) MessageBox.Show("Sai cmnr");
+            else { MessageBox.Show("Thêm nhân viên thành công!");
+                XoaTrang();
+            }
+
         }
 
         private void DgvNhanVien_DoubleClick(object sender, EventArgs e)

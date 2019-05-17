@@ -37,15 +37,15 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtHotLine = new System.Windows.Forms.TextBox();
+            this.txtCT = new System.Windows.Forms.TextBox();
+            this.txtDC = new System.Windows.Forms.TextBox();
+            this.txtTen = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -160,7 +160,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.btnLuu);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Font = new System.Drawing.Font("Arial", 15F);
             this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -174,10 +174,10 @@
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.textBox4);
-            this.panel4.Controls.Add(this.textBox3);
-            this.panel4.Controls.Add(this.textBox2);
-            this.panel4.Controls.Add(this.textBox1);
+            this.panel4.Controls.Add(this.txtHotLine);
+            this.panel4.Controls.Add(this.txtCT);
+            this.panel4.Controls.Add(this.txtDC);
+            this.panel4.Controls.Add(this.txtTen);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label3);
@@ -187,38 +187,38 @@
             this.panel4.Size = new System.Drawing.Size(588, 310);
             this.panel4.TabIndex = 9;
             // 
-            // textBox4
+            // txtHotLine
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.Location = new System.Drawing.Point(236, 230);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(276, 30);
-            this.textBox4.TabIndex = 15;
+            this.txtHotLine.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtHotLine.Location = new System.Drawing.Point(236, 230);
+            this.txtHotLine.Name = "txtHotLine";
+            this.txtHotLine.Size = new System.Drawing.Size(276, 30);
+            this.txtHotLine.TabIndex = 15;
             // 
-            // textBox3
+            // txtCT
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.Location = new System.Drawing.Point(236, 183);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(276, 30);
-            this.textBox3.TabIndex = 14;
+            this.txtCT.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCT.Location = new System.Drawing.Point(236, 183);
+            this.txtCT.Name = "txtCT";
+            this.txtCT.Size = new System.Drawing.Size(276, 30);
+            this.txtCT.TabIndex = 14;
             // 
-            // textBox2
+            // txtDC
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(236, 98);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(276, 61);
-            this.textBox2.TabIndex = 13;
+            this.txtDC.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDC.Location = new System.Drawing.Point(236, 98);
+            this.txtDC.Multiline = true;
+            this.txtDC.Name = "txtDC";
+            this.txtDC.Size = new System.Drawing.Size(276, 61);
+            this.txtDC.TabIndex = 13;
             // 
-            // textBox1
+            // txtTen
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(236, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(276, 30);
-            this.textBox1.TabIndex = 12;
+            this.txtTen.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTen.Location = new System.Drawing.Point(236, 49);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(276, 30);
+            this.txtTen.TabIndex = 12;
             // 
             // label5
             // 
@@ -260,15 +260,16 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Tên công ty :";
             // 
-            // button5
+            // btnLuu
             // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button5.Location = new System.Drawing.Point(442, 434);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 30);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Lưu";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLuu.Location = new System.Drawing.Point(442, 434);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 30);
+            this.btnLuu.TabIndex = 8;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.BtnLuu_Click);
             // 
             // panel3
             // 
@@ -318,14 +319,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtHotLine;
+        private System.Windows.Forms.TextBox txtCT;
+        private System.Windows.Forms.TextBox txtDC;
+        private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

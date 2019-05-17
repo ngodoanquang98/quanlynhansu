@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLNS.BLL;
+using QLNS.DAL;
 
 namespace QLNS.GUI
 {
@@ -48,6 +50,13 @@ namespace QLNS.GUI
             Form frm = new FrmLuong();
             frm.Show();
             this.Hide();
+        }
+
+        private void BtnLuu_Click(object sender, EventArgs e)
+        {
+            CongTyDAO DAO = new CongTyDAO();
+            CongTy ct = new CongTy(txtTen.Text, txtDC.Text, txtCT.Text, txtHotLine.Text);
+            DAO.Insert(ct);
         }
     }
 }

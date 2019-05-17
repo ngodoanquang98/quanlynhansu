@@ -42,6 +42,7 @@
             this.btnChamCong = new System.Windows.Forms.Button();
             this.btnQLNS = new System.Windows.Forms.Button();
             this.btnCTy = new System.Windows.Forms.Button();
+            this.btnNhatKy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -50,6 +51,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.Controls.Add(this.btnNhatKy);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel2);
@@ -247,6 +249,20 @@
             this.btnCTy.UseVisualStyleBackColor = true;
             this.btnCTy.Click += new System.EventHandler(this.btnCTy_Click);
             // 
+            // btnNhatKy
+            // 
+            this.btnNhatKy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNhatKy.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnNhatKy.FlatAppearance.BorderSize = 0;
+            this.btnNhatKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhatKy.Location = new System.Drawing.Point(751, 495);
+            this.btnNhatKy.MaximumSize = new System.Drawing.Size(124, 23);
+            this.btnNhatKy.Name = "btnNhatKy";
+            this.btnNhatKy.Size = new System.Drawing.Size(124, 23);
+            this.btnNhatKy.TabIndex = 13;
+            this.btnNhatKy.Text = "Nhật ký hoạt động";
+            this.btnNhatKy.UseVisualStyleBackColor = false;
+            // 
             // FrmChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,5 +296,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnTrangChu;
+        private System.Windows.Forms.Button btnNhatKy;
     }
 }
