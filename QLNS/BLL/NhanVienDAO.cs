@@ -11,11 +11,11 @@ using QLNS.BLL;
 
 namespace QLNS.BLL
 {
-    class NhanVienBLL
+    class NhanVienDAO
     {
-        private static NhanVienBLL instance;
+        private static NhanVienDAO instance;
         SqlConnection conn = new SqlConnection();
-        public NhanVienBLL()
+        public NhanVienDAO()
         {
 
             string connString = @"Data Source=DESKTOP-34CKI58\HOAI;Initial Catalog=QLNS;Integrated Security=True";
@@ -34,27 +34,27 @@ namespace QLNS.BLL
             }
             return list;
         }
-        internal static NhanVienBLL Instance
+        internal static NhanVienDAO Instance
         {
-            get { if (instance == null) instance = new NhanVienBLL(); return instance; }
+            get { if (instance == null) instance = new NhanVienDAO(); return instance; }
             private set { instance = value; }
         }
         public bool Insert(NhanVien nv)
         {
 
-            int result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemNV @HoTen , @QueQuan , @NgaySinh , @email , @MaPB , @SDT , @CMT , @NgayBD , @SoHD", new object[] { nv.HoTen, nv.QueQuan, nv.NgaySinh, nv.email, nv.MaPB, nv.SDT, nv.CMT, nv.NgayBatDau, nv.SoHD });
+            int result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemNV @HoTen , @QueQuan , @NgaySinh , @email , @MaPB , @SDT , @CMT , @NgayBD ", new object[] { nv.HoTen, nv.QueQuan, nv.NgaySinh, nv.email, nv.MaPB, nv.SDT, nv.CMT, nv.NgayBatDau });
 
             return result > 0;
 
         }
         public bool Update (NhanVien nv)
         {
-            int result = DataProvider.Instance.ExecuteNonQuery("update NhanVien set @nv.HoTen,@nv.MaPB,@nv.NgaySinh,@nv.QueQuan, @nv.email, @@nv.CMT, @nv.SoHD, @nv.NgayBatDau where MaNV = @nv.MaNV ", new object[]{ nv.HoTen, nv.MaPB, nv.NgaySinh,
-                nv.QueQuan, nv.email, nv.SDT, nv.CMT, nv.SoHD, nv.NgayBatDau, nv.MaNV });
+            int result = DataProvider.Instance.ExecuteNonQuery("exec SuaNV @HoTen , @MaPB , @NgaySinh , @QueQuan , @email , @SDT , @CMT , @NgayBatDau , @MaNV ", new object[]{ nv.HoTen, nv.MaPB, nv.NgaySinh,
+                nv.QueQuan, nv.email, nv.SDT, nv.CMT, nv.NgayBatDau, nv.MaNV });
            
             //result = DataProvider.Instance.ExecuteNonQuery("insert into ChiTietCV values ({0},{1},{2},{3}",new object[] { ct.MaCV, ct.MaNV, ct.MaPB, ct.NgayBD });
             //if (result <= 0) return false;
-            return true;
+            return result > 0 ;
         }
         public List<NhanVien> SearchKH(string str)
         {

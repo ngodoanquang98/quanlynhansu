@@ -23,3 +23,6 @@ C:\CEO_Headquater\LEARNING\MTA\3.Third\Term2\Team Internship\QLNS-TTN\QLNS\bin\D
 >>>>>>> 5426cb491a1c5930e306e50a35107ee829984d22
 C:\CEO_Headquater\LEARNING\MTA\3.Third\Term2\Team Internship\QLNS-TTN\QLNS\obj\Debug\QLNS.exe
 C:\CEO_Headquater\LEARNING\MTA\3.Third\Term2\Team Internship\QLNS-TTN\QLNS\obj\Debug\QLNS.pdb
+C:\Users\MyPC\Documents\QLNS-TTN\QLNS\bin\Debug\QLNS.exe.config
+C:\Users\MyPC\Documents\QLNS-TTN\QLNS\obj\Debug\QLNS.exe
+C:\Users\MyPC\Documents\QLNS-TTN\QLNS\obj\Debug\QLNS.pdb
