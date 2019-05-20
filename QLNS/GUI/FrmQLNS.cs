@@ -47,12 +47,23 @@ namespace QLNS.GUI
             cbbLoaiHD.DisplayMember = "TenLHD";
             cbbLoaiHD.ValueMember = "MaLHD";
             cbbLoaiHD.DataSource = dT;
+            adapter = new SqlDataAdapter("SELECT MaLCB,Luong FROM LuongCoBan", sqlConnection);
+            DataTable da = new DataTable();
+            adapter.Fill(da);
+            cbbLCB.DisplayMember = "Luong";
+            cbbLCB.ValueMember = "MaLCB";
+            cbbLCB.DataSource = da;
 
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dialog = MessageBox.Show("Bạn có chắc muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dialog == DialogResult.Yes)
+            {
+                this.Close();
+                Environment.Exit(1);
+            }
         }
 
         private void picAva_Click(object sender, EventArgs e)
@@ -107,23 +118,35 @@ namespace QLNS.GUI
                 return;
             }
             long a, b, c, d;
+            long lcb,n;
             long.TryParse(cbbPhongBan.SelectedValue.ToString(), out a);
-            long.TryParse(cbbLoaiHD.Text, out b);
-            long.TryParse(cbbTrangThai.Text, out c);
-            if (long.TryParse(lblMaNV.Text,out d))
+            long.TryParse(cbbLoaiHD.SelectedValue.ToString(), out b);
+            long.TryParse(cbbTrangThai.SelectedValue.ToString(), out c);
+            long.TryParse(cbbChucVu.SelectedValue.ToString(), out n);
+            long.TryParse(cbbLCB.SelectedValue.ToString(), out lcb);
+            if (long.TryParse(lblMaNV.Text, out d))
             {
-                NhanVien n = new NhanVien(d, txtHoTen.Text, a, txtQue.Text, dtpNgaySinh.Value,
-                     txtEmail.Text, dtpNBD.ToString(), txtSDT.Text, dtpNBD.Value);
+                NhanVien nv = new NhanVien(d, txtHoTen.Text, a, txtQue.Text, dtpNgaySinh.Value,
+                     txtEmail.Text, txtSDT.Text,txtCMT.Text, dtpNBD.Value, lcb,n);
                 NhanVienDAO nvb = new NhanVienDAO();
-                if (!nvb.Update(n)) MessageBox.Show("Sai cmnr!");
-            }
-            NhanVien nv = new NhanVien(0, txtHoTen.Text, a,txtQue.Text, dtpNgaySinh.Value,
-                 txtEmail.Text, dtpNBD.ToString(), txtSDT.Text, dtpNBD.Value);
+                if (!nvb.Update(nv)) MessageBox.Show("Sai cmnr!");
+                else MessageBox.Show("Sửa nhân viên thành công!");
 
-            NhanVienDAO bll = new NhanVienDAO();
-            if (!bll.Insert(nv)) MessageBox.Show("Sai cmnr");
-            else { MessageBox.Show("Thêm nhân viên thành công!");
-                XoaTrang();
+            }
+            else
+            {
+                NhanVien nv = new NhanVien(0, txtHoTen.Text, a, txtQue.Text, dtpNgaySinh.Value,
+                     txtEmail.Text, txtSDT.Text,txtCMT.Text, dtpNBD.Value, lcb,n);
+
+                NhanVienDAO bll = new NhanVienDAO();
+                ChiTietTT tt = new ChiTietTT(c, 0, dtpNBBTT.Value, "");
+                HopDong hd = new HopDong(0, 0, lcb, dtpNBD.Value);
+                if (bll.Insert(nv, hd, tt)) MessageBox.Show("Sai cmnr");
+                else
+                {
+                    MessageBox.Show("Thêm nhân viên thành công!");
+                    XoaTrang();
+                }
             }
 
         }
@@ -141,6 +164,27 @@ namespace QLNS.GUI
             txtQue.Text = dgvNhanVien.Rows[index].Cells["QueQuan"].Value.ToString();
             txtSDT.Text = dgvNhanVien.Rows[index].Cells["SDT"].Value.ToString();
             cbbPhongBan.SelectedValue = dgvNhanVien.Rows[index].Cells["MaPB"].Value.ToString();
+            cbbLCB.SelectedValue = dgvNhanVien.Rows[index].Cells["MaLCB"].Value.ToString();
+        }
+
+        private void BtnTrangChu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmChinh frm = new FrmChinh();
+            frm.Show();
+        }
+        private void btnLuong_Click(object sender, EventArgs e)
+        {
+            Form frm = new FrmQLNS();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnChamCong_Click(object sender, EventArgs e)
+        {
+            Form frm = new FrmChamCong();
+            frm.Show();
+            this.Hide();
         }
     }
 }

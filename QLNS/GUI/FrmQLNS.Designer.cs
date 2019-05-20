@@ -39,6 +39,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabConDSNV = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cbbLCB = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
@@ -67,7 +69,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.picAva = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -83,7 +84,7 @@
             this.MaPB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CMT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLCB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -93,7 +94,6 @@
             this.panel1.SuspendLayout();
             this.tabConDSNV.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAva)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.panel2.SuspendLayout();
@@ -129,6 +129,7 @@
             this.button1.TabIndex = 18;
             this.button1.Text = "Quản lý lương";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnLuong_Click);
             // 
             // button2
             // 
@@ -146,6 +147,7 @@
             this.button2.TabIndex = 17;
             this.button2.Text = "Chấm công";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btnChamCong_Click);
             // 
             // button3
             // 
@@ -180,6 +182,7 @@
             this.btnTrangChu.TabIndex = 15;
             this.btnTrangChu.Text = "Trang chủ";
             this.btnTrangChu.UseVisualStyleBackColor = false;
+            this.btnTrangChu.Click += new System.EventHandler(this.BtnTrangChu_Click);
             // 
             // btnExit
             // 
@@ -227,12 +230,14 @@
             this.tabConDSNV.Location = new System.Drawing.Point(0, 112);
             this.tabConDSNV.Name = "tabConDSNV";
             this.tabConDSNV.SelectedIndex = 0;
-            this.tabConDSNV.Size = new System.Drawing.Size(845, 421);
+            this.tabConDSNV.Size = new System.Drawing.Size(845, 471);
             this.tabConDSNV.TabIndex = 15;
             this.tabConDSNV.Click += new System.EventHandler(this.TabConDSNV_Click);
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cbbLCB);
+            this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.dtpNgaySinh);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.txtSDT);
@@ -261,7 +266,6 @@
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.picAva);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label4);
@@ -270,14 +274,32 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(837, 388);
+            this.tabPage1.Size = new System.Drawing.Size(837, 438);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hồ sơ nhân viên";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // cbbLCB
+            // 
+            this.cbbLCB.FormattingEnabled = true;
+            this.cbbLCB.Location = new System.Drawing.Point(143, 357);
+            this.cbbLCB.Name = "cbbLCB";
+            this.cbbLCB.Size = new System.Drawing.Size(121, 28);
+            this.cbbLCB.TabIndex = 44;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(21, 360);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(114, 20);
+            this.label9.TabIndex = 43;
+            this.label9.Text = "Lương cơ bản :";
+            // 
             // dtpNgaySinh
             // 
-            this.dtpNgaySinh.Location = new System.Drawing.Point(417, 289);
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(142, 326);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(200, 26);
             this.dtpNgaySinh.TabIndex = 42;
@@ -285,7 +307,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(324, 295);
+            this.label8.Location = new System.Drawing.Point(24, 326);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 20);
             this.label8.TabIndex = 41;
@@ -411,7 +433,7 @@
             // btnLuu
             // 
             this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnLuu.Location = new System.Drawing.Point(461, 352);
+            this.btnLuu.Location = new System.Drawing.Point(465, 406);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 26);
             this.btnLuu.TabIndex = 18;
@@ -422,7 +444,7 @@
             // btnThemMoi
             // 
             this.btnThemMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnThemMoi.Location = new System.Drawing.Point(332, 352);
+            this.btnThemMoi.Location = new System.Drawing.Point(313, 404);
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.Size = new System.Drawing.Size(103, 28);
             this.btnThemMoi.TabIndex = 17;
@@ -511,17 +533,6 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "CMT :";
             // 
-            // picAva
-            // 
-            this.picAva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picAva.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picAva.Location = new System.Drawing.Point(317, 17);
-            this.picAva.Name = "picAva";
-            this.picAva.Size = new System.Drawing.Size(90, 120);
-            this.picAva.TabIndex = 5;
-            this.picAva.TabStop = false;
-            this.picAva.Click += new System.EventHandler(this.picAva_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -593,7 +604,7 @@
             this.MaPB,
             this.SDT,
             this.CMT,
-            this.SoHD,
+            this.MaLCB,
             this.NgayBatDau});
             this.dgvNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNhanVien.Location = new System.Drawing.Point(3, 30);
@@ -660,12 +671,12 @@
             this.CMT.Name = "CMT";
             this.CMT.ReadOnly = true;
             // 
-            // SoHD
+            // MaLCB
             // 
-            this.SoHD.DataPropertyName = "SoHD";
-            this.SoHD.HeaderText = "Số hợp đồng";
-            this.SoHD.Name = "SoHD";
-            this.SoHD.ReadOnly = true;
+            this.MaLCB.DataPropertyName = "MaLCB";
+            this.MaLCB.HeaderText = "Mã LCB";
+            this.MaLCB.Name = "MaLCB";
+            this.MaLCB.ReadOnly = true;
             // 
             // NgayBatDau
             // 
@@ -709,7 +720,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 533);
+            this.ClientSize = new System.Drawing.Size(845, 583);
             this.Controls.Add(this.tabConDSNV);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
@@ -723,7 +734,6 @@
             this.tabConDSNV.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAva)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -757,7 +767,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox picAva;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
@@ -784,6 +793,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbbLCB;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
@@ -792,7 +803,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPB;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn CMT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaLCB;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayBatDau;
     }
 }

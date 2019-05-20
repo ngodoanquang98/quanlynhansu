@@ -35,7 +35,12 @@ namespace QLNS.GUI
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dialog = MessageBox.Show("Bạn có chắc muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dialog == DialogResult.Yes)
+            {
+                this.Close();
+                Environment.Exit(1);
+            }
         }
 
         private void btnTrangChu_Click(object sender, EventArgs e)

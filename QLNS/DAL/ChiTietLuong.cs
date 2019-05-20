@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,34 +9,39 @@ namespace QLNS.DAL
 {
     class ChiTietLuong
     {
-        private double _MaLCB;
-        private double _MaNV;
-        private int _TongSoNgay;
-        private int _TongSoDem;
+        private long _MaNV;
+        private int _TongNgay;
+        private int _TongDem;
         private decimal _Luong;
         private decimal _TienBaoHiem;
         public ChiTietLuong()
         {
-            _MaLCB = 0;
             _MaNV = 0;
-            _TongSoDem = 0;
-            _TongSoNgay = 0;
+            _TongDem = 0;
+            _TongNgay = 0;
             _Luong = 0;
             _TienBaoHiem = 0;
         }
-        public ChiTietLuong(double ma, double manv, int ngay, int dem, decimal l, decimal bh)
+        public ChiTietLuong(long manv, int ngay, int dem, decimal l, decimal bh)
         {
-            _MaLCB = ma;
             _MaNV = manv;
-            _TongSoDem = dem;
-            _TongSoNgay = ngay;
+            _TongDem = dem;
+            _TongNgay = ngay;
             _Luong = l;
             _TienBaoHiem = bh;
         }
-        public double MaLCB { get => _MaLCB; set => _MaLCB = value; }
-        public double MaNV { get => _MaNV; set => _MaNV = value; }
-        public int TongSoNgay { get => _TongSoNgay; }
-        public int TongSoDem { get => _TongSoDem; }
+        public ChiTietLuong(DataRow r)
+        {
+            long.TryParse(r["MaNV"].ToString(), out _MaNV);
+            decimal.TryParse(r["Luong"].ToString(), out _Luong);
+            int.TryParse(r["TongDem"].ToString(), out _TongDem);
+            int.TryParse(r["TongNgay"].ToString(), out _TongNgay);
+            decimal.TryParse(r["TienBaoHiem"].ToString(), out _TienBaoHiem);
+
+        }
+        public long MaNV { get => _MaNV; set => _MaNV = value; }
+        public int TongNgay { get => _TongNgay; }
+        public int TongDem { get => _TongDem; }
         public decimal Luong { get => _Luong; }
         public decimal TienBaoHiem { get => _TienBaoHiem; set => _TienBaoHiem = value; }
     }
