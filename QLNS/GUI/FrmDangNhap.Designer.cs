@@ -153,7 +153,6 @@
             this.btnEnter.TabIndex = 0;
             this.btnEnter.Text = "Đăng nhập";
             this.btnEnter.UseVisualStyleBackColor = false;
-            this.btnEnter.Click += new System.EventHandler(this.BtnEnter_Click);
             // 
             // label2
             // 

@@ -21,7 +21,19 @@ namespace QLNS.BLL
             conn.ConnectionString = connString;
             conn.Open();
         }
-        
+        public CongTy LayDL()
+        {
+            CongTy nv = new CongTy();
+            DataTable data = DataProvider.Instance.ExecuteQuery("select * from CongTy");
+            foreach (DataRow item in data.Rows)
+            {
+                nv.TenCty = item["TenCTy"].ToString();
+                nv.DiaChi = item["DiaChi"].ToString();
+                nv.ChuTich = item["ChuTich"].ToString();
+                nv.HotLine = item["HotLine"].ToString();
+            }
+            return nv;
+        }
         internal static CongTyDAO Instance
         {
             get { if (instance == null) instance = new CongTyDAO(); return instance; }
@@ -33,22 +45,10 @@ namespace QLNS.BLL
             
                 CongTy nv = new CongTy();
                 DataTable data = DataProvider.Instance.ExecuteQuery("select * from CongTy");
-            if(data.Rows.Count < 0)
-                result = DataProvider.Instance.ExecuteNonQuery("EXEC SuaCTy @TenCTy ,  @DiaChi , @ChuTich , @HotLine ", new object[] { cc.TenCty, cc.DiaChi, cc.ChuTich, cc.HotLine });
-            else result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemCTy @TenCTy ,  @DiaChi , @ChuTich , @HotLine ", new object[] { cc.TenCty, cc.DiaChi, cc.ChuTich, cc.HotLine });
+            if(data.Rows.Count <= 0)
+                result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemCTy @TenCTy ,  @DiaChi , @ChuTich, @HotLine ", new object[] { cc.TenCty, cc.DiaChi, cc.ChuTich, cc.HotLine });
+            else result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemCTy @TenCTy ,  @DiaChi , @ChuTich, @HotLine ", new object[] { cc.TenCty, cc.DiaChi, cc.ChuTich, cc.HotLine });
             return result > 0;
-        }
-
-        public static CongTy LayDL()
-        {
-            DataTable data = DataProvider.Instance.ExecuteQuery("select * from CongTy");
-            CongTy ct = new CongTy();
-            DataRow r = data.Rows[0];
-            ct.ChuTich = r["ChuTich"].ToString();
-            ct.TenCty = r["TenCTy"].ToString();
-            ct.HotLine = r["HotLine"].ToString();
-            ct.DiaChi = r["DiaChi"].ToString();
-            return ct;
         }
     
     }

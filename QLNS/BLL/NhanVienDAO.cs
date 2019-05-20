@@ -39,31 +39,23 @@ namespace QLNS.BLL
             get { if (instance == null) instance = new NhanVienDAO(); return instance; }
             private set { instance = value; }
         }
-        public bool Insert(NhanVien nv, HopDong hd, ChiTietTT tt)
+        public bool Insert(NhanVien nv)
         {
-            int result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemNV @HoTen , @QueQuan , @NgaySinh , @email , @MaPB , @SDT , @CMT , @NgayBD , @MaLCB , @MaCV", new object[] { nv.HoTen, nv.QueQuan, nv.NgaySinh, nv.email, nv.MaPB, nv.SDT, nv.CMT, nv.NgayBatDau, nv.MaLCB, nv.MaCV });
-            if (result > 0) return false;
-            long a =Convert.ToInt32(DataProvider.Instance.ExecuteQuery("select top 1 MaNV from NhanVien orderby MaNV DESC").ToString());
-            result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemHD @MaNV , @MaLHD", new object[] { a, hd.MaLHD });
-            if (result > 0) return false;
-            if (!UpdateTT(tt)) return false;
-            return true;
-        }
 
+            int result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemNV @HoTen , @QueQuan , @NgaySinh , @email , @MaPB , @SDT , @CMT , @NgayBD ", new object[] { nv.HoTen, nv.QueQuan, nv.NgaySinh, nv.email, nv.MaPB, nv.SDT, nv.CMT, nv.NgayBatDau });
+
+            return result > 0;
+
+        }
         public bool Update (NhanVien nv)
         {
-            int result = DataProvider.Instance.ExecuteNonQuery("exec SuaNV @HoTen , @MaPB , @NgaySinh , @QueQuan , @email , @SDT , @CMT , @NgayBatDau , @MaNV , @MaLCB , @MaCV", new object[]{ nv.HoTen, nv.MaPB, nv.NgaySinh,
-                nv.QueQuan, nv.email, nv.SDT, nv.CMT, nv.NgayBatDau, nv.MaNV,nv.MaLCB ,  nv.MaCV });
+            int result = DataProvider.Instance.ExecuteNonQuery("exec SuaNV @HoTen , @MaPB , @NgaySinh , @QueQuan , @email , @SDT , @CMT , @NgayBatDau , @MaNV ", new object[]{ nv.HoTen, nv.MaPB, nv.NgaySinh,
+                nv.QueQuan, nv.email, nv.SDT, nv.CMT, nv.NgayBatDau, nv.MaNV });
+           
+            //result = DataProvider.Instance.ExecuteNonQuery("insert into ChiTietCV values ({0},{1},{2},{3}",new object[] { ct.MaCV, ct.MaNV, ct.MaPB, ct.NgayBD });
+            //if (result <= 0) return false;
             return result > 0 ;
         }
-
-
-        public bool UpdateTT(ChiTietTT ct)
-        {
-            int result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemTT @MaNV , @MaTT  , @NgayBD", new object[] { ct.MaNV, ct.MaTT, ct.NgayBD });
-            return result > 0;
-        }
-
         public List<NhanVien> SearchKH(string str)
         {
             List<NhanVien> KHList = new List<NhanVien>();

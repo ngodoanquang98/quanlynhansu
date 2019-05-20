@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmChinh));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnNhatKy = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -43,6 +42,7 @@
             this.btnChamCong = new System.Windows.Forms.Button();
             this.btnQLNS = new System.Windows.Forms.Button();
             this.btnCTy = new System.Windows.Forms.Button();
+            this.btnNhatKy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,21 +60,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(882, 525);
             this.panel1.TabIndex = 0;
-            // 
-            // btnNhatKy
-            // 
-            this.btnNhatKy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNhatKy.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnNhatKy.FlatAppearance.BorderSize = 0;
-            this.btnNhatKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhatKy.Location = new System.Drawing.Point(751, 495);
-            this.btnNhatKy.MaximumSize = new System.Drawing.Size(124, 23);
-            this.btnNhatKy.Name = "btnNhatKy";
-            this.btnNhatKy.Size = new System.Drawing.Size(124, 23);
-            this.btnNhatKy.TabIndex = 13;
-            this.btnNhatKy.Text = "Nhật ký hoạt động";
-            this.btnNhatKy.UseVisualStyleBackColor = false;
-            this.btnNhatKy.Click += new System.EventHandler(this.BtnNhatKy_Click);
             // 
             // panel3
             // 
@@ -175,7 +160,7 @@
             this.btnExit.Size = new System.Drawing.Size(35, 34);
             this.btnExit.TabIndex = 4;
             this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
             // label1
             // 
@@ -209,7 +194,7 @@
             this.btnLuong.ForeColor = System.Drawing.Color.Black;
             this.btnLuong.Location = new System.Drawing.Point(288, 220);
             this.btnLuong.Name = "btnLuong";
-            this.btnLuong.Size = new System.Drawing.Size(203, 174);
+            this.btnLuong.Size = new System.Drawing.Size(203, 161);
             this.btnLuong.TabIndex = 7;
             this.btnLuong.Text = "Quản lý lương";
             this.btnLuong.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -220,12 +205,12 @@
             // 
             this.btnChamCong.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnChamCong.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnChamCong.BackgroundImage")));
-            this.btnChamCong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnChamCong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnChamCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
             this.btnChamCong.ForeColor = System.Drawing.Color.Black;
             this.btnChamCong.Location = new System.Drawing.Point(56, 220);
             this.btnChamCong.Name = "btnChamCong";
-            this.btnChamCong.Size = new System.Drawing.Size(197, 174);
+            this.btnChamCong.Size = new System.Drawing.Size(197, 161);
             this.btnChamCong.TabIndex = 6;
             this.btnChamCong.Text = "Chấm công";
             this.btnChamCong.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -241,7 +226,7 @@
             this.btnQLNS.ForeColor = System.Drawing.Color.Black;
             this.btnQLNS.Location = new System.Drawing.Point(289, 31);
             this.btnQLNS.Name = "btnQLNS";
-            this.btnQLNS.Size = new System.Drawing.Size(202, 183);
+            this.btnQLNS.Size = new System.Drawing.Size(202, 165);
             this.btnQLNS.TabIndex = 5;
             this.btnQLNS.Text = "Quản lý nhân sự";
             this.btnQLNS.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -252,17 +237,31 @@
             // 
             this.btnCTy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCTy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCTy.BackgroundImage")));
-            this.btnCTy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCTy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCTy.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
             this.btnCTy.ForeColor = System.Drawing.Color.Black;
             this.btnCTy.Location = new System.Drawing.Point(56, 31);
             this.btnCTy.Name = "btnCTy";
-            this.btnCTy.Size = new System.Drawing.Size(198, 183);
+            this.btnCTy.Size = new System.Drawing.Size(198, 164);
             this.btnCTy.TabIndex = 4;
             this.btnCTy.Text = "Thông tin công ty";
             this.btnCTy.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.btnCTy.UseVisualStyleBackColor = true;
             this.btnCTy.Click += new System.EventHandler(this.btnCTy_Click);
+            // 
+            // btnNhatKy
+            // 
+            this.btnNhatKy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNhatKy.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnNhatKy.FlatAppearance.BorderSize = 0;
+            this.btnNhatKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhatKy.Location = new System.Drawing.Point(751, 495);
+            this.btnNhatKy.MaximumSize = new System.Drawing.Size(124, 23);
+            this.btnNhatKy.Name = "btnNhatKy";
+            this.btnNhatKy.Size = new System.Drawing.Size(124, 23);
+            this.btnNhatKy.TabIndex = 13;
+            this.btnNhatKy.Text = "Nhật ký hoạt động";
+            this.btnNhatKy.UseVisualStyleBackColor = false;
             // 
             // FrmChinh
             // 

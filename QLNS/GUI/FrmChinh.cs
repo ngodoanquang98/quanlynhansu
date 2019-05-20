@@ -20,9 +20,12 @@ namespace QLNS.GUI
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-            Environment.Exit(1);
         }
 
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void HideBtn(Button a, Button b, Button c)
         {
@@ -85,13 +88,6 @@ namespace QLNS.GUI
             Form frm = new FrmCTy();
             frm.Show();
             this.Hide();
-        }
-
-        private void BtnNhatKy_Click(object sender, EventArgs e)
-        {
-            NhatKyHD nk = new NhatKyHD();
-            this.Hide();
-            nk.Show();
         }
     }
 }

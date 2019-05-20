@@ -21,6 +21,8 @@ namespace QLNS.BLL
             conn.ConnectionString = connString;
             conn.Open();
         }
+<<<<<<< HEAD
+=======
         public List<ChamCong> LayDL()
         {
             List<ChamCong> list = new List<ChamCong>();
@@ -32,6 +34,7 @@ namespace QLNS.BLL
             }
             return list;
         }
+>>>>>>> 72a425fab40a15e2ab2f72aa7abc5a93fefc093f
         internal static ChamCongDAO Instance
         {
             get { if (instance == null) instance = new ChamCongDAO(); return instance; }
@@ -39,9 +42,15 @@ namespace QLNS.BLL
         }
         public bool Insert(ChamCong cc)
         {
+<<<<<<< HEAD
             bool a;
             bool.TryParse(cc.MaCa.ToString(), out a);
             int result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemChamCong @Ngay ,  @MaNV , @MaCa ", new object[] { cc.Ngay, cc.MaNV , a });
+=======
+<<<<<<< HEAD
+            
+            int result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemChamCong @Ngay ,  @MaNV , @MaCa ", new object[] { cc.Ngay, cc.MaNV, cc.MaNV , cc.MaCa });
+>>>>>>> c89e940f729e7d939e0d4dacd790c0407acf67ac
 
             return result > 0;
 
@@ -57,6 +66,13 @@ namespace QLNS.BLL
                 list.Add(nv);
             }
             return list;
+=======
+
+            int result = DataProvider.Instance.ExecuteNonQuery("insert into ChamCong values Ngay = @Ngay , MaNV =  @MaNV , MaCa = @MaCa ", new object[] { cc.Ngay, cc.MaNV, cc.MaNV , cc.MaCa });
+
+            return result > 0;
+
+>>>>>>> 72a425fab40a15e2ab2f72aa7abc5a93fefc093f
         }
     }
 }
