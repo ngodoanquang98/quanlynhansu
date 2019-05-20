@@ -22,8 +22,13 @@ namespace QLNS.BLL
 
         private DataProvider() { }
 
+<<<<<<< HEAD
         // string connectionSTR = @"Data Source=pc;Initial Catalog=QLNS;Integrated Security=True";
         string connectionSTR = @"Data Source=DESKTOP-34CKI58\HOAI;Initial Catalog=QLNS;Integrated Security=True";
+=======
+        string connectionSTR = @"Data Source=DESKTOP-34CKI58\HOAI;Initial Catalog=QLNS;Integrated Security=True";
+        // @"Data Source=DESKTOP-34CKI58\HOAI;Initial Catalog=QLNS;Integrated Security=True";
+>>>>>>> 2402df7cd25de1dc3aa9db09a1a3eef639cd7ad4
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
