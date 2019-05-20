@@ -39,8 +39,9 @@ namespace QLNS.BLL
         }
         public bool Insert(ChamCong cc)
         {
-            
-            int result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemChamCong @Ngay ,  @MaNV , @MaCa ", new object[] { cc.Ngay, cc.MaNV, cc.MaNV , cc.MaCa });
+            bool a;
+            bool.TryParse(cc.MaCa.ToString(), out a);
+            int result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemChamCong @Ngay ,  @MaNV , @MaCa ", new object[] { cc.Ngay, cc.MaNV , a });
 
             return result > 0;
 

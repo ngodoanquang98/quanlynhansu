@@ -66,21 +66,7 @@ namespace QLNS.GUI
             }
         }
 
-        private void picAva_Click(object sender, EventArgs e)
-        {
-            DialogResult result = openFile.ShowDialog();
-
-            //Kiểm tra xem người dùng đã chọn file chưa
-            if (result == DialogResult.OK)
-            {
-                // Lấy hình ảnh
-                Image img = Image.FromFile(openFile.FileName);
-
-                // Gán ảnh
-                picAva.BackgroundImage = img;
-            }
-        }
-
+        
         private void TabConDSNV_Click(object sender, EventArgs e)
         {
 

@@ -30,8 +30,10 @@ namespace QLNS.DAL
         public ChamCong(DataRow r)
         {
             DateTime.TryParse(r["Ngay"].ToString(), out _Ngay);
-            int.TryParse(r["MaCa"].ToString(), out _MaCa);
+            _MaCa = Convert.ToInt16(r["MaCa"]);
             long.TryParse(r["MaNV"].ToString(), out _MaNV);
+            long.TryParse(r["MaChamCong"].ToString(), out _MaChamCong);
+
         }
         public long MaChamCong { get => _MaChamCong; }
         public DateTime Ngay { get => _Ngay; set => _Ngay = value; }

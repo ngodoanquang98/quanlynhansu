@@ -585,7 +585,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(837, 388);
+            this.tabPage2.Size = new System.Drawing.Size(837, 438);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Danh sách nhân viên";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -611,7 +611,7 @@
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.ReadOnly = true;
             this.dgvNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNhanVien.Size = new System.Drawing.Size(831, 355);
+            this.dgvNhanVien.Size = new System.Drawing.Size(831, 405);
             this.dgvNhanVien.TabIndex = 1;
             this.dgvNhanVien.DoubleClick += new System.EventHandler(this.DgvNhanVien_DoubleClick);
             // 

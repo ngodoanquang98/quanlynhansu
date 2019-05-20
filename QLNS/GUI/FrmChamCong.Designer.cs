@@ -51,13 +51,14 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.MaChamCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaCa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -321,6 +322,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaChamCong,
             this.MaCa,
             this.MaNV,
             this.Ngay});
@@ -342,6 +344,23 @@
             this.panel4.Size = new System.Drawing.Size(798, 35);
             this.panel4.TabIndex = 4;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(369, 4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(297, 27);
+            this.textBox1.TabIndex = 5;
+            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(220, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(142, 21);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Tìm kiếm Mã NV";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -360,6 +379,12 @@
             this.dateTimePicker2.TabIndex = 2;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.DateTimePicker2_ValueChanged);
             // 
+            // MaChamCong
+            // 
+            this.MaChamCong.DataPropertyName = "MaChamCong";
+            this.MaChamCong.HeaderText = "Mã chấm công";
+            this.MaChamCong.Name = "MaChamCong";
+            // 
             // MaCa
             // 
             this.MaCa.DataPropertyName = "MaCa";
@@ -377,23 +402,6 @@
             this.Ngay.DataPropertyName = "Ngay";
             this.Ngay.HeaderText = "Ngày";
             this.Ngay.Name = "Ngay";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(220, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(142, 21);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Tìm kiếm Mã NV";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(369, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(297, 27);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // FrmChamCong
             // 
@@ -449,10 +457,11 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaChamCong;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCa;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ngay;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label6;
     }
 }

@@ -29,8 +29,8 @@ namespace QLNS.GUI
             cbbCa.DisplayMember = "TenCa";
             cbbCa.ValueMember = "MaCa";
             cbbCa.DataSource = dt;
-            if (DateTime.Now.Hour < 18 || DateTime.Now.Hour > 6) cbbCa.SelectedValue = 0;
-            else cbbCa.SelectedValue = 1;
+            if (DateTime.Now.Hour < 18 && DateTime.Now.Hour > 6) cbbCa.SelectedValue = 1;
+            else cbbCa.SelectedValue = 0;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -73,7 +73,7 @@ namespace QLNS.GUI
             }
             int b;
             long c;
-            int.TryParse(cbbCa.Text, out b);
+            int.TryParse(cbbCa.SelectedValue.ToString(), out b);
             long.TryParse(txtMaNV.Text, out c);
             ChamCong cc = new ChamCong(0, dtpNgay.Value, b, c);
             ChamCongDAO dao = new ChamCongDAO();
