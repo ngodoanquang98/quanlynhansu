@@ -50,15 +50,15 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.MaChamCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaCa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.MaChamCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaCa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -332,6 +332,30 @@
             this.dataGridView1.Size = new System.Drawing.Size(798, 291);
             this.dataGridView1.TabIndex = 3;
             // 
+            // MaChamCong
+            // 
+            this.MaChamCong.DataPropertyName = "MaChamCong";
+            this.MaChamCong.HeaderText = "Mã chấm công";
+            this.MaChamCong.Name = "MaChamCong";
+            // 
+            // MaCa
+            // 
+            this.MaCa.DataPropertyName = "MaCa";
+            this.MaCa.HeaderText = "Mã Ca";
+            this.MaCa.Name = "MaCa";
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "Mã nhân viên";
+            this.MaNV.Name = "MaNV";
+            // 
+            // Ngay
+            // 
+            this.Ngay.DataPropertyName = "Ngay";
+            this.Ngay.HeaderText = "Ngày";
+            this.Ngay.Name = "Ngay";
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.textBox1);
@@ -378,30 +402,6 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(140, 27);
             this.dateTimePicker2.TabIndex = 2;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.DateTimePicker2_ValueChanged);
-            // 
-            // MaChamCong
-            // 
-            this.MaChamCong.DataPropertyName = "MaChamCong";
-            this.MaChamCong.HeaderText = "Mã chấm công";
-            this.MaChamCong.Name = "MaChamCong";
-            // 
-            // MaCa
-            // 
-            this.MaCa.DataPropertyName = "MaCa";
-            this.MaCa.HeaderText = "Mã Ca";
-            this.MaCa.Name = "MaCa";
-            // 
-            // MaNV
-            // 
-            this.MaNV.DataPropertyName = "MaNV";
-            this.MaNV.HeaderText = "Mã nhân viên";
-            this.MaNV.Name = "MaNV";
-            // 
-            // Ngay
-            // 
-            this.Ngay.DataPropertyName = "Ngay";
-            this.Ngay.HeaderText = "Ngày";
-            this.Ngay.Name = "Ngay";
             // 
             // FrmChamCong
             // 

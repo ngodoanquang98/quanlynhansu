@@ -14,14 +14,30 @@ namespace QLNS.GUI
 {
     public partial class FrmCTy : Form
     {
+        BindingSource ListPB = new BindingSource();
         public FrmCTy()
         {
+            
             InitializeComponent();
+            try
+            {
+                CongTy ct = CongTyDAO.LayDL();
+                txtCT.Text = ct.ChuTich;
+                txtDC.Text = ct.DiaChi;
+                txtHotLine.Text = ct.HotLine;
+                txtTen.Text = ct.TenCty;
+            }
+            catch { }
         }
 
         private void btnExit_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dialog = MessageBox.Show("Bạn có chắc muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dialog == DialogResult.Yes)
+            {
+                this.Close();
+                Environment.Exit(1);
+            }
         }
 
         private void btnTrangChu_Click(object sender, EventArgs e)
@@ -54,9 +70,77 @@ namespace QLNS.GUI
 
         private void BtnLuu_Click(object sender, EventArgs e)
         {
+            if (txtTen.Text == null || txtHotLine.Text == null || txtDC.Text == null || txtCT == null)
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+                return;
+            }
             CongTyDAO DAO = new CongTyDAO();
             CongTy ct = new CongTy(txtTen.Text, txtDC.Text, txtCT.Text, txtHotLine.Text);
-            DAO.Insert(ct);
+            if (DAO.Insert(ct)) MessageBox.Show("Cập nhật thông tin thành công!");
+            else MessageBox.Show("Vui lòng nhật lại!");
+        }
+
+        private void BtnLuuTN_Click(object sender, EventArgs e)
+        {
+            if(txtTenPB.Text == "")
+            {
+                MessageBox.Show("Bạn phải nhập thông tin!");
+                return;
+            }
+            long a;
+            if (long.TryParse(lblID.Text, out a))
+            {
+                PhongBan pb = new PhongBan(a, txtTenPB.Text);
+                if (PhongBanDAO.Instance.Update(pb))
+                {
+                    MessageBox.Show("Sửa phòng ban thành công!");
+                    ListPB.DataSource = PhongBanDAO.Instance.LayDS();
+                    dataGridView1.DataSource = ListPB;
+                    dataGridView1.Refresh();
+                    lblID.Text = "";
+                    txtTenPB.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Sửa phòng ban thất bại!");
+                }
+            }
+            else
+            {
+                if (PhongBanDAO.Instance.Insert(txtTenPB.Text))
+                {
+                    MessageBox.Show("Thêm phòng ban thành công!");
+                    ListPB.DataSource = PhongBanDAO.Instance.LayDS();
+                    dataGridView1.DataSource = ListPB;
+                    dataGridView1.Refresh();
+                    lblID.Text = "";
+                    txtTenPB.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Thêm phòng ban thất bại!");
+                }
+            }
+        }
+
+        private void TabControl1_Click(object sender, EventArgs e)
+        {
+            ListPB.DataSource = PhongBanDAO.Instance.LayDS();
+            dataGridView1.DataSource = ListPB;
+        }
+
+        private void BtnThem_Click(object sender, EventArgs e)
+        {
+            lblID.Text = "";
+            txtTenPB.Text = "";
+        }
+
+        private void DataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            int index = dataGridView1.Rows.IndexOf(dataGridView1.SelectedRows[0]);
+            lblID.Text = dataGridView1.Rows[index].Cells[0].Value.ToString();
+            txtTenPB.Text = dataGridView1.Rows[index].Cells[1].Value.ToString();
         }
     }
 }

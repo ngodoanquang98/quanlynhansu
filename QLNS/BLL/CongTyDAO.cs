@@ -21,18 +21,16 @@ namespace QLNS.BLL
             conn.ConnectionString = connString;
             conn.Open();
         }
-        public CongTy LayDL()
+        public static CongTy LayDL()
         {
-            CongTy nv = new CongTy();
             DataTable data = DataProvider.Instance.ExecuteQuery("select * from CongTy");
-            foreach (DataRow item in data.Rows)
-            {
-                nv.TenCty = item["TenCTy"].ToString();
-                nv.DiaChi = item["DiaChi"].ToString();
-                nv.ChuTich = item["ChuTich"].ToString();
-                nv.HotLine = item["HotLine"].ToString();
-            }
-            return nv;
+            CongTy ct = new CongTy();
+            DataRow r = data.Rows[0];
+            ct.ChuTich = r["ChuTich"].ToString();
+            ct.TenCty = r["TenCTy"].ToString();
+            ct.HotLine = r["HotLine"].ToString();
+            ct.DiaChi = r["DiaChi"].ToString();
+            return ct;
         }
         internal static CongTyDAO Instance
         {

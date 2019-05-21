@@ -37,4 +37,3 @@ namespace QLNS.DAL
         public long MaNV { get => _MaNV; set => _MaNV = value; }
     }
 }
-

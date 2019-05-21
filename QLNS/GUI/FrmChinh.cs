@@ -89,5 +89,11 @@ namespace QLNS.GUI
             frm.Show();
             this.Hide();
         }
+
+        private void BtnNhatKy_Click(object sender, EventArgs e)
+        {
+            NhatKyHD frm = new NhatKyHD();
+            frm.Show();
+        }
     }
 }

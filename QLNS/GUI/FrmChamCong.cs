@@ -29,13 +29,18 @@ namespace QLNS.GUI
             cbbCa.DisplayMember = "TenCa";
             cbbCa.ValueMember = "MaCa";
             cbbCa.DataSource = dt;
-            if (DateTime.Now.Hour < 18 && DateTime.Now.Hour > 6) cbbCa.SelectedValue = 1;
-            else cbbCa.SelectedValue = 0;
+            if (DateTime.Now.Hour < 18 || DateTime.Now.Hour > 6) cbbCa.SelectedValue = 0;
+            else cbbCa.SelectedValue = 1;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dialog = MessageBox.Show("Bạn có chắc muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dialog == DialogResult.Yes)
+            {
+                this.Close();
+                Environment.Exit(1);
+            }
         }
 
         private void btnTrangChu_Click(object sender, EventArgs e)
@@ -61,14 +66,14 @@ namespace QLNS.GUI
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            if(txtMaNV.Text == null)
+            if (txtMaNV.Text == null)
             {
                 MessageBox.Show("Bạn phải nhập đầy đủ thông tin!");
                 return;
             }
             int b;
             long c;
-            int.TryParse(cbbCa.SelectedValue.ToString(), out b);
+            int.TryParse(cbbCa.Text, out b);
             long.TryParse(txtMaNV.Text, out c);
             ChamCong cc = new ChamCong(0, dtpNgay.Value, b, c);
             ChamCongDAO dao = new ChamCongDAO();

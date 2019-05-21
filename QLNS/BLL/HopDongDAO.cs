@@ -26,14 +26,27 @@ namespace QLNS.BLL
             get { if (instance == null) instance = new HopDongDAO(); return instance; }
             private set { instance = value; }
         }
-    //    public bool Insert(HopDong cc)
-    //    {
-    //        int result;
+        public List<ChiTietLuong> TimKiemNgay(DateTime a)
+        {
+            ChiTietLuong nv = new ChiTietLuong();
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC TimKiemLuongThang @ngay", new object[] { a });
+            List<ChiTietLuong> list = new List<ChiTietLuong>();
+            foreach (DataRow d in data.Rows)
+            {
+                ChiTietLuong nk = new ChiTietLuong(d);
+                list.Add(nk);
+            }
+            return list;
+        }
 
-    //        HopDong nv = new HopDong();
-    //            result = DataProvider.Instance.ExecuteNonQuery("EXEC Them ", new object[] { cc.TenCty, cc.DiaChi, cc.ChuTich, cc.HotLine });
-           
-    //        return result > 0;
-    //    }
+        //    public bool Insert(HopDong cc)
+        //    {
+        //        int result;
+
+        //        HopDong nv = new HopDong();
+        //            result = DataProvider.Instance.ExecuteNonQuery("EXEC Them ", new object[] { cc.TenCty, cc.DiaChi, cc.ChuTich, cc.HotLine });
+
+        //        return result > 0;
+        //    }
     }
 }

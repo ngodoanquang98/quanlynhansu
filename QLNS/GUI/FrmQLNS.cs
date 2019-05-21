@@ -16,6 +16,7 @@ namespace QLNS.GUI
     public partial class FrmQLNS : Form
     {
         BindingSource ListNv = new BindingSource();
+        BindingSource ListTN = new BindingSource();
         SqlConnection sqlConnection = new SqlConnection();
         public FrmQLNS()
         {
@@ -47,15 +48,28 @@ namespace QLNS.GUI
             cbbLoaiHD.DisplayMember = "TenLHD";
             cbbLoaiHD.ValueMember = "MaLHD";
             cbbLoaiHD.DataSource = dT;
-
+            adapter = new SqlDataAdapter("SELECT MaLCB,Luong FROM LuongCoBan", sqlConnection);
+            DataTable da = new DataTable();
+            adapter.Fill(da);
+            cbbLCB.DisplayMember = "Luong";
+            cbbLCB.ValueMember = "MaLCB";
+            cbbLCB.DataSource = da;
+            ListTN.DataSource = ThanNhanDAO.Instance.LayDS();
+            dgvThanNhan.DataSource = ListTN;
+            dgvThanNhan.Refresh();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dialog = MessageBox.Show("Bạn có chắc muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dialog == DialogResult.Yes)
+            {
+                this.Close();
+                Environment.Exit(1);
+            }
         }
 
-        
+       
         private void TabConDSNV_Click(object sender, EventArgs e)
         {
 
@@ -75,7 +89,6 @@ namespace QLNS.GUI
             txtCMT.Text = "";
             txtEmail.Text = "";
             txtHoTen.Text = "";
-            txtNoiO.Text = "";
             txtQue.Text = "";
             lblMaNV.Text = "";
             lblSoHD.Text = "";
@@ -87,35 +100,48 @@ namespace QLNS.GUI
 
         private void BtnLuu_Click(object sender, EventArgs e)
         {
-            if (txtCMT.Text == null || txtHoTen.Text == null)
+            if (txtCMT.Text == null || txtHoTen.Text == null || txtCMT.Text == null || txtEmail.Text == null || txtQue.Text == null 
+                    ||txtSDT.TextLength > 10 || txtSDT.Text == null)
             {
                 MessageBox.Show("Bạn phải nhập đầy đủ dữ liệu");
                 return;
             }
             long a, b, c, d;
+            long lcb, n;
             long.TryParse(cbbPhongBan.SelectedValue.ToString(), out a);
-            long.TryParse(cbbLoaiHD.Text, out b);
-            long.TryParse(cbbTrangThai.Text, out c);
-            if (long.TryParse(lblMaNV.Text,out d))
+            long.TryParse(cbbLoaiHD.SelectedValue.ToString(), out b);
+            long.TryParse(cbbTrangThai.SelectedValue.ToString(), out c);
+            long.TryParse(cbbChucVu.SelectedValue.ToString(), out n);
+            long.TryParse(cbbLCB.SelectedValue.ToString(), out lcb);
+            if (long.TryParse(lblMaNV.Text, out d))
             {
-                NhanVien n = new NhanVien(d, txtHoTen.Text, a, txtQue.Text, dtpNgaySinh.Value,
-                     txtEmail.Text, dtpNBD.ToString(), txtSDT.Text, dtpNBD.Value);
+                NhanVien nv = new NhanVien(d, txtHoTen.Text, a, txtQue.Text, dtpNgaySinh.Value,
+                     txtEmail.Text, txtSDT.Text, txtCMT.Text, dtpNBD.Value, lcb, n);
                 NhanVienDAO nvb = new NhanVienDAO();
-                if (!nvb.Update(n)) MessageBox.Show("Sai cmnr!");
-            }
-            NhanVien nv = new NhanVien(0, txtHoTen.Text, a,txtQue.Text, dtpNgaySinh.Value,
-                 txtEmail.Text, dtpNBD.ToString(), txtSDT.Text, dtpNBD.Value);
+                if (!nvb.Update(nv)) MessageBox.Show("Sai cmnr!");
+                else MessageBox.Show("Sửa nhân viên thành công!");
 
-            NhanVienDAO bll = new NhanVienDAO();
-            if (!bll.Insert(nv)) MessageBox.Show("Sai cmnr");
-            else { MessageBox.Show("Thêm nhân viên thành công!");
-                XoaTrang();
+            }
+            else
+            {
+                NhanVien nv = new NhanVien(0, txtHoTen.Text, a, txtQue.Text, dtpNgaySinh.Value,
+                     txtEmail.Text, txtSDT.Text, txtCMT.Text, dtpNBD.Value, lcb, n);
+
+                NhanVienDAO bll = new NhanVienDAO();
+                ChiTietTT tt = new ChiTietTT(c, 0, dtpNBBTT.Value, "");
+                HopDong hd = new HopDong(0, b, 0);
+                if (bll.Insert(nv, hd, tt)) MessageBox.Show("Sai cmnr");
+                else
+                {
+                    MessageBox.Show("Thêm nhân viên thành công!");
+                    XoaTrang();
+                }
             }
 
         }
 
         private void DgvNhanVien_DoubleClick(object sender, EventArgs e)
-        { 
+        {
             int index = dgvNhanVien.Rows.IndexOf(dgvNhanVien.SelectedRows[0]);
 
             lblMaNV.Text = dgvNhanVien.Rows[index].Cells["MaNV"].Value.ToString();
@@ -127,6 +153,100 @@ namespace QLNS.GUI
             txtQue.Text = dgvNhanVien.Rows[index].Cells["QueQuan"].Value.ToString();
             txtSDT.Text = dgvNhanVien.Rows[index].Cells["SDT"].Value.ToString();
             cbbPhongBan.SelectedValue = dgvNhanVien.Rows[index].Cells["MaPB"].Value.ToString();
+            cbbLCB.SelectedValue = dgvNhanVien.Rows[index].Cells["MaLCB"].Value.ToString();
+        }
+
+        private void BtnTrangChu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmChinh frm = new FrmChinh();
+            frm.Show();
+        }
+        private void btnLuong_Click(object sender, EventArgs e)
+        {
+            Form frm = new FrmQLNS();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnChamCong_Click(object sender, EventArgs e)
+        {
+            Form frm = new FrmChamCong();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void BtnLuuTN_Click(object sender, EventArgs e)
+        {
+            if(txtTenTN.Text == "" || txtSDTTN.Text == "" || txtMaNV.Text == "")
+            {
+                MessageBox.Show("Bạn phải nhập đầy đủ thông tin!");
+                return;
+            }
+            long manv,matn;
+            long.TryParse(txtMaNV.Text, out manv);
+            if (long.TryParse(lblMaTN.Text, out matn)){
+                ThanNhan tn = new ThanNhan(0, manv, txtTenTN.Text, dtpNSTN.Value, txtSDTTN.Text);
+                if (ThanNhanDAO.Update(tn)) {
+                    MessageBox.Show("Sửa thành công!");
+                    XoaTrangTN();
+                    ListTN.DataSource = ThanNhanDAO.Instance.LayDS();
+                    dgvThanNhan.DataSource = ListTN;
+                    dgvThanNhan.Refresh();
+                }
+                else MessageBox.Show("Sửa thất bại!");
+            }
+            else {
+                ThanNhan tn = new ThanNhan(0, manv, txtTenTN.Text, dtpNSTN.Value, txtSDTTN.Text);
+                if (ThanNhanDAO.Insert(tn))
+                {
+                    MessageBox.Show("Thêm thành công!");
+                    XoaTrangTN();
+                    ListTN.DataSource = ThanNhanDAO.Instance.LayDS();
+                    dgvThanNhan.DataSource = ListTN;
+                    dgvThanNhan.Refresh();
+                }
+                else MessageBox.Show("Thêm thất bại!");
+            }
+        }
+        
+        private void XoaTrangTN()
+        {
+            txtSDTTN.Text = "";
+            lblMaTN.Text = "";
+            txtMaNV.Text = "";
+            txtTenTN.Text = "";
+        }
+        private void BtnThem_Click(object sender, EventArgs e)
+        {
+            XoaTrangTN();
+        }
+
+        private void TabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtTimTN_TextChanged(object sender, EventArgs e)
+        {
+            long a;
+            if(long.TryParse(txtTimTN.Text, out a))
+            {
+                ListTN.DataSource = ThanNhanDAO.Instance.TimTN(a);
+                dgvThanNhan.DataSource = ListTN;
+                dgvThanNhan.Refresh();
+            }
+            
+        }
+
+        private void DgvThanNhan_DoubleClick(object sender, EventArgs e)
+        {
+            int index = dgvThanNhan.Rows.IndexOf(dgvThanNhan.SelectedRows[0]);
+            txtTenTN.Text = dgvThanNhan.Rows[index].Cells["TenTN"].Value.ToString();
+            txtSDTTN.Text = dgvThanNhan.Rows[index].Cells["SDTTN"].Value.ToString();
+            txtMaNV.Text = dgvThanNhan.Rows[index].Cells["MaNVTN"].Value.ToString();
+            lblMaTN.Text = dgvThanNhan.Rows[index].Cells["MaTN"].Value.ToString();
+            dtpNSTN.Value =DateTime.Parse(dgvThanNhan.Rows[index].Cells["NgaySinhTN"].Value.ToString());
         }
     }
 }

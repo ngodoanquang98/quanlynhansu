@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmChinh));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNhatKy = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.btnChamCong = new System.Windows.Forms.Button();
             this.btnQLNS = new System.Windows.Forms.Button();
             this.btnCTy = new System.Windows.Forms.Button();
-            this.btnNhatKy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,6 +60,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(882, 525);
             this.panel1.TabIndex = 0;
+            // 
+            // btnNhatKy
+            // 
+            this.btnNhatKy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNhatKy.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnNhatKy.FlatAppearance.BorderSize = 0;
+            this.btnNhatKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhatKy.Location = new System.Drawing.Point(751, 495);
+            this.btnNhatKy.MaximumSize = new System.Drawing.Size(124, 23);
+            this.btnNhatKy.Name = "btnNhatKy";
+            this.btnNhatKy.Size = new System.Drawing.Size(124, 23);
+            this.btnNhatKy.TabIndex = 13;
+            this.btnNhatKy.Text = "Nhật ký hoạt động";
+            this.btnNhatKy.UseVisualStyleBackColor = false;
+            this.btnNhatKy.Click += new System.EventHandler(this.BtnNhatKy_Click);
             // 
             // panel3
             // 
@@ -248,20 +263,6 @@
             this.btnCTy.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.btnCTy.UseVisualStyleBackColor = true;
             this.btnCTy.Click += new System.EventHandler(this.btnCTy_Click);
-            // 
-            // btnNhatKy
-            // 
-            this.btnNhatKy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNhatKy.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnNhatKy.FlatAppearance.BorderSize = 0;
-            this.btnNhatKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhatKy.Location = new System.Drawing.Point(751, 495);
-            this.btnNhatKy.MaximumSize = new System.Drawing.Size(124, 23);
-            this.btnNhatKy.Name = "btnNhatKy";
-            this.btnNhatKy.Size = new System.Drawing.Size(124, 23);
-            this.btnNhatKy.TabIndex = 13;
-            this.btnNhatKy.Text = "Nhật ký hoạt động";
-            this.btnNhatKy.UseVisualStyleBackColor = false;
             // 
             // FrmChinh
             // 
