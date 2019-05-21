@@ -76,14 +76,6 @@ namespace QLNS.GUI
             ListNv.DataSource = NhanVienDAO.Instance.LayDL();
             dgvNhanVien.DataSource = ListNv;
         }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-            if (txtTimKiem.Text == "") MessageBox.Show("Chưa nhập thông tin tìm kiếm");
-            string str = txtTimKiem.Text;
-            dgvNhanVien.DataSource = ListNv;
-            ListNv.DataSource = NhanVienDAO.Instance.SearchKH(str);
-        }
         private void XoaTrang()
         {
             txtCMT.Text = "";
@@ -247,6 +239,16 @@ namespace QLNS.GUI
             txtMaNV.Text = dgvThanNhan.Rows[index].Cells["MaNVTN"].Value.ToString();
             lblMaTN.Text = dgvThanNhan.Rows[index].Cells["MaTN"].Value.ToString();
             dtpNSTN.Value =DateTime.Parse(dgvThanNhan.Rows[index].Cells["NgaySinhTN"].Value.ToString());
+        }
+
+        private void TxtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTimKiem.Text != "")
+            {
+                string str = txtTimKiem.Text;
+                dgvNhanVien.DataSource = ListNv;
+                ListNv.DataSource = NhanVienDAO.Instance.SearchKH(str);
+            }
         }
     }
 }
