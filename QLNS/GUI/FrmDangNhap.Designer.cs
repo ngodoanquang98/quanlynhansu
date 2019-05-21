@@ -32,17 +32,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnEnter = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtMK = new System.Windows.Forms.TextBox();
+            this.txtTenDN = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txtTenDN = new System.Windows.Forms.TextBox();
-            this.txtMK = new System.Windows.Forms.TextBox();
+            this.btnEnter = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -88,18 +88,37 @@
             this.panel1.Size = new System.Drawing.Size(434, 317);
             this.panel1.TabIndex = 2;
             // 
-            // btnEnter
+            // panel3
             // 
-            this.btnEnter.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnEnter.FlatAppearance.BorderSize = 0;
-            this.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnEnter.Location = new System.Drawing.Point(165, 37);
-            this.btnEnter.Name = "btnEnter";
-            this.btnEnter.Size = new System.Drawing.Size(108, 29);
-            this.btnEnter.TabIndex = 0;
-            this.btnEnter.Text = "Đăng nhập";
-            this.btnEnter.UseVisualStyleBackColor = false;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.txtMK);
+            this.panel3.Controls.Add(this.txtTenDN);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 85);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(432, 147);
+            this.panel3.TabIndex = 2;
+            // 
+            // txtMK
+            // 
+            this.txtMK.Font = new System.Drawing.Font("Arial", 14F);
+            this.txtMK.Location = new System.Drawing.Point(191, 80);
+            this.txtMK.Name = "txtMK";
+            this.txtMK.PasswordChar = '*';
+            this.txtMK.Size = new System.Drawing.Size(200, 29);
+            this.txtMK.TabIndex = 3;
+            // 
+            // txtTenDN
+            // 
+            this.txtTenDN.Font = new System.Drawing.Font("Arial", 14F);
+            this.txtTenDN.Location = new System.Drawing.Point(191, 36);
+            this.txtTenDN.Name = "txtTenDN";
+            this.txtTenDN.Size = new System.Drawing.Size(200, 29);
+            this.txtTenDN.TabIndex = 2;
             // 
             // label4
             // 
@@ -132,37 +151,19 @@
             this.panel2.Size = new System.Drawing.Size(432, 83);
             this.panel2.TabIndex = 1;
             // 
-            // panel3
+            // btnEnter
             // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.txtMK);
-            this.panel3.Controls.Add(this.txtTenDN);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 85);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(432, 147);
-            this.panel3.TabIndex = 2;
-            // 
-            // txtTenDN
-            // 
-            this.txtTenDN.Font = new System.Drawing.Font("Arial", 14F);
-            this.txtTenDN.Location = new System.Drawing.Point(191, 36);
-            this.txtTenDN.Name = "txtTenDN";
-            this.txtTenDN.Size = new System.Drawing.Size(200, 29);
-            this.txtTenDN.TabIndex = 2;
-            // 
-            // txtMK
-            // 
-            this.txtMK.Font = new System.Drawing.Font("Arial", 14F);
-            this.txtMK.Location = new System.Drawing.Point(191, 80);
-            this.txtMK.Name = "txtMK";
-            this.txtMK.PasswordChar = '*';
-            this.txtMK.Size = new System.Drawing.Size(200, 29);
-            this.txtMK.TabIndex = 3;
+            this.btnEnter.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnEnter.FlatAppearance.BorderSize = 0;
+            this.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnEnter.Location = new System.Drawing.Point(165, 37);
+            this.btnEnter.Name = "btnEnter";
+            this.btnEnter.Size = new System.Drawing.Size(108, 29);
+            this.btnEnter.TabIndex = 0;
+            this.btnEnter.Text = "Đăng nhập";
+            this.btnEnter.UseVisualStyleBackColor = false;
+            this.btnEnter.Click += new System.EventHandler(this.BtnEnter_Click);
             // 
             // label2
             // 
@@ -192,9 +193,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
