@@ -16,7 +16,7 @@ namespace QLNS.BLL
         public PhongBanDAO()
         {
 
-            string connString = @"Data Source=DESKTOP-34CKI58\HOAI;Initial Catalog=QLNS;Integrated Security=True";
+            string connString = @"Data Source=QUANG\SQLEXPRESS;Initial Catalog=QLNS;Integrated Security=True";
 
             conn.ConnectionString = connString;
             conn.Open();
@@ -29,7 +29,7 @@ namespace QLNS.BLL
 
         public List<PhongBan> LayDS()
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("select MaPB, TenPB from PhongBan");
+            DataTable data = DataProvider.Instance.ExecuteQuery("Select* from PhongBan");
             List<PhongBan> list = new List<PhongBan>();
             foreach (DataRow d in data.Rows)
             {

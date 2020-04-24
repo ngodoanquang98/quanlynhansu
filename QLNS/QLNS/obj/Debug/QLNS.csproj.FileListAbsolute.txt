@@ -1,0 +1,44 @@
+<<<<<<< HEAD
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\bin\Debug\QLNS.exe.config
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\bin\Debug\QLNS.exe
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\bin\Debug\QLNS.pdb
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\obj\Debug\QLNS.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\obj\Debug\QLNS.GUI.FrmChamCong.resources
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\obj\Debug\QLNS.GUI.FrmChinh.resources
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\obj\Debug\QLNS.GUI.FrmCTy.resources
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\obj\Debug\QLNS.FrmDangNhap.resources
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\obj\Debug\QLNS.GUI.FrmLuong.resources
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\obj\Debug\QLNS.GUI.FrmQLNS.resources
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\obj\Debug\QLNS.Properties.Resources.resources
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\obj\Debug\QLNS.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\obj\Debug\QLNS.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\obj\Debug\QLNS.csproj.CopyComplete
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\obj\Debug\QLNS.exe
+C:\Users\Admin\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets\QLNS-TTN\QLNS\obj\Debug\QLNS.pdb
+=======
+C:\CEO_Headquater\LEARNING\MTA\3.Third\Term2\Team Internship\QLNS-TTN\QLNS\bin\Debug\QLNS.exe.config
+>>>>>>> 5426cb491a1c5930e306e50a35107ee829984d22
+C:\CEO_Headquater\LEARNING\MTA\3.Third\Term2\Team Internship\QLNS-TTN\QLNS\obj\Debug\QLNS.exe
+C:\CEO_Headquater\LEARNING\MTA\3.Third\Term2\Team Internship\QLNS-TTN\QLNS\obj\Debug\QLNS.pdb
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\bin\Debug\QLNS.exe.config
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\bin\Debug\QLNS.exe
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\bin\Debug\QLNS.pdb
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\obj\Debug\QLNS.csprojAssemblyReference.cache
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\obj\Debug\QLNS.GUI.FrmChamCong.resources
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\obj\Debug\QLNS.GUI.FrmChinh.resources
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\obj\Debug\QLNS.GUI.FrmCTy.resources
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\obj\Debug\QLNS.FrmDangNhap.resources
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\obj\Debug\QLNS.GUI.FrmLuong.resources
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\obj\Debug\QLNS.GUI.FrmQLNS.resources
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\obj\Debug\QLNS.Properties.Resources.resources
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\obj\Debug\QLNS.csproj.GenerateResource.cache
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\obj\Debug\QLNS.csproj.CoreCompileInputs.cache
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\obj\Debug\QLNS.csproj.CopyComplete
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\obj\Debug\QLNS.exe
+C:\Users\ngoqu\OneDrive\Máy tính\QLNS\QLNS\obj\Debug\QLNS.pdb

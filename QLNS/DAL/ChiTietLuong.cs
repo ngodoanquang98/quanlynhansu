@@ -19,7 +19,7 @@ namespace QLNS.DAL
             _MaNV = 0;
             _TongDem = 0;
             _TongNgay = 0;
-            _Luong = 0;
+            _Luong = 500000;
             _TienBaoHiem = 0;
         }
         public ChiTietLuong(long manv, int ngay, int dem, decimal l, decimal bh)

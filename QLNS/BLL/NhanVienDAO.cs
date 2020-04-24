@@ -18,7 +18,7 @@ namespace QLNS.BLL
         public NhanVienDAO()
         {
 
-            string connString = @"Data Source=DESKTOP-34CKI58\HOAI;Initial Catalog=QLNS;Integrated Security=True";
+            string connString = @"Data Source=QUANG\SQLEXPRESS;Initial Catalog=QLNS;Integrated Security=True";
 
             conn.ConnectionString = connString;
             conn.Open();
@@ -41,7 +41,8 @@ namespace QLNS.BLL
         }
         public bool Insert(NhanVien nv, HopDong hd, ChiTietTT tt)
         {
-            int result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemNV @HoTen , @QueQuan , @NgaySinh , @email , @MaPB , @SDT , @CMT , @NgayBD , @MaLCB , @MaCV ", new object[] { nv.HoTen, nv.QueQuan, nv.NgaySinh, nv.email, nv.MaPB, nv.SDT, nv.CMT, nv.NgayBatDau, nv.MaLCB, nv.MaCV });
+            int result = DataProvider.Instance.ExecuteNonQuery("insert into NhanVien values (  @HoTen , @QueQuan , @NgaySinh , @email , @MaPB , @SDT , @CMT , @NgayBD , @MaLCB , @MaCV , @GT )",
+                new object[] {  nv.HoTen, nv.QueQuan, nv.NgaySinh, nv.email, nv.MaPB, nv.SDT, nv.CMT, nv.NgayBatDau, nv.MaLCB, nv.MaCV , nv.GT});
             if (result <= 0) return false;
             DataTable dt = DataProvider.Instance.ExecuteQuery("select top 1 MaNV from NhanVien order by MaNV DESC");
             long a = 1, b;
@@ -57,14 +58,14 @@ namespace QLNS.BLL
         }
         public bool Update (NhanVien nv)
         {
-            int result = DataProvider.Instance.ExecuteNonQuery("exec SuaNV @HoTen , @MaPB , @NgaySinh , @QueQuan , @email , @SDT , @CMT , @NgayBatDau , @MaNV , @MaLCB , @MaCV", new object[]{ nv.HoTen, nv.MaPB, nv.NgaySinh,
-               nv.QueQuan, nv.email, nv.SDT, nv.CMT, nv.NgayBatDau, nv.MaNV,nv.MaLCB ,  nv.MaCV });
+            int result = DataProvider.Instance.ExecuteNonQuery("exec SuaNV @HoTen , @MaPB , @NgaySinh , @QueQuan , @email , @SDT , @CMT , @NgayBatDau , @MaNV , @MaLCB , @MaCV , @GT", new object[]{ nv.HoTen, nv.MaPB, nv.NgaySinh,
+               nv.QueQuan, nv.email, nv.SDT, nv.CMT, nv.NgayBatDau, nv.MaNV,nv.MaLCB ,  nv.MaCV, nv.GT });
             return result > 0;
         }
 
         public bool UpdateTT(ChiTietTT ct)
         {
-            int result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemTT @MaNV , @MaTT  , @NgayBD", new object[] { ct.MaNV, ct.MaTT, ct.NgayBD });
+            int result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemTT @MaNV , @MaTT  , @NgayBD ", new object[] { ct.MaNV, ct.MaTT, ct.NgayBD });
             return result > 0;
         }
         public List<NhanVien> SearchKH(string str)

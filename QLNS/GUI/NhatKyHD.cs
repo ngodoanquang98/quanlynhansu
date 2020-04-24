@@ -52,5 +52,10 @@ namespace QLNS.GUI
                 dataGridView1.DataSource = ListNK;
             }
         }
+
+        private void NhatKyHD_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

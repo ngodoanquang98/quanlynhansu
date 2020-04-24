@@ -89,9 +89,10 @@ namespace QLNS.GUI
                 return;
             }
             long a;
+            
             if (long.TryParse(lblID.Text, out a))
             {
-                PhongBan pb = new PhongBan(a, txtTenPB.Text);
+                PhongBan pb = new PhongBan(a, txtTenPB.Text,1);
                 if (PhongBanDAO.Instance.Update(pb))
                 {
                     MessageBox.Show("Sửa phòng ban thành công!");
@@ -141,6 +142,22 @@ namespace QLNS.GUI
             int index = dataGridView1.Rows.IndexOf(dataGridView1.SelectedRows[0]);
             lblID.Text = dataGridView1.Rows[index].Cells[0].Value.ToString();
             txtTenPB.Text = dataGridView1.Rows[index].Cells[1].Value.ToString();
+       
+        }
+
+        private void lblID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FrmCTy_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

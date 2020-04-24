@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace QLNS.DAL
 {
     class ChamCong
+        
     {
         private long _MaChamCong;
         private DateTime _Ngay;
@@ -22,18 +23,17 @@ namespace QLNS.DAL
         }
         public ChamCong(long ma, DateTime ngay, int ca, long nv)
         {
-            _MaChamCong = ma;
-            _Ngay = ngay;
-            _MaCa = ca;
-            _MaNV = nv;
+          this._MaChamCong = ma;
+           this. _Ngay = ngay;
+           this. _MaCa = ca;
+            this._MaNV = nv;
         }
         public ChamCong(DataRow r)
         {
+           //long.TryParse(r["MaChamCong"].ToString(), out this._MaChamCong);
             DateTime.TryParse(r["Ngay"].ToString(), out _Ngay);
             _MaCa = Convert.ToInt16(r["MaCa"]);
-            long.TryParse(r["MaNV"].ToString(), out _MaNV);
-            long.TryParse(r["MaChamCong"].ToString(), out _MaChamCong);
-
+            long.TryParse(r["MaNV"].ToString(), out this._MaNV);          
         }
         public long MaChamCong { get => _MaChamCong; }
         public DateTime Ngay { get => _Ngay; set => _Ngay = value; }

@@ -20,6 +20,7 @@ namespace QLNS.DAL
         private DateTime _NgayBatDau;
         private long _MaLCB;
         private long _MaCV;
+        private string _GT;
         public NhanVien()
         {
             _MaNV = 0;
@@ -33,8 +34,9 @@ namespace QLNS.DAL
             _NgayBatDau = DateTime.Now;
             _MaLCB = 0;
             _MaCV = 0;
+            _GT = "Nam";
         }
-        public NhanVien(long manv, string ten, long mapb,  string que, DateTime ngay, string email, string sdt, string cmt, DateTime date, long lcb, long cv)
+        public NhanVien(long manv, string ten, long mapb,  string que, DateTime ngay, string email, string sdt, string cmt, DateTime date, long lcb, long cv, string gt)
         {
             _MaNV = manv;
             _HoTen = ten;
@@ -47,6 +49,7 @@ namespace QLNS.DAL
             _NgayBatDau = date;
             _MaLCB = lcb;
             _MaCV = cv;
+            _GT = gt;
         }
 
 
@@ -63,6 +66,7 @@ namespace QLNS.DAL
             DateTime.TryParse(r["NgayBatDau"].ToString(), out _NgayBatDau);
             long.TryParse(r["MaCV"].ToString(), out _MaCV);
             long.TryParse(r["MaLCB"].ToString(), out _MaLCB);
+            _GT = r["GioiTinh"].ToString();
         }
         public long MaNV { get => _MaNV; }
         public string HoTen { get => _HoTen; set => _HoTen = value; }
@@ -75,6 +79,7 @@ namespace QLNS.DAL
         public DateTime NgayBatDau { get => _NgayBatDau; set => _NgayBatDau = value; }
         public long MaLCB { get => _MaLCB; set => _MaLCB = value; }
         public long MaCV { get => _MaCV; set => _MaCV = value; }
+        public string GT { get => _GT; set => _GT = value; }
 
     }
 }

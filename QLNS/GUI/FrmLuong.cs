@@ -77,5 +77,15 @@ namespace QLNS.GUI
             ListLuong.DataSource = LuongDAO.Instance.TimKiemNgay(dateTimePicker1.Value);
             dataGridView1.DataSource = ListLuong;
         }
+
+        private void btnLuong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmLuong_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

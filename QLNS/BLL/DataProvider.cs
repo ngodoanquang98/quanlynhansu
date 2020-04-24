@@ -21,8 +21,7 @@ namespace QLNS.BLL
         }
 
         private DataProvider() { }
-        string connectionSTR = @"Data Source=DESKTOP-34CKI58\HOAI;Initial Catalog=QLNS;Integrated Security=True";
-        // @"Data Source=DESKTOP-34CKI58\HOAI;Initial Catalog=QLNS;Integrated Security=True";
+        string connectionSTR = @"Data Source=QUANG\SQLEXPRESS;Initial Catalog=QLNS;Integrated Security=True";
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
@@ -66,8 +65,19 @@ namespace QLNS.BLL
                     {
                         if (item.Contains('@'))
                         {
-                            command.Parameters.AddWithValue(item, parameter[i]);
-                            i++;
+                            if(item == "@NgaySinh")
+                            {
+                                DateTime dtData = Convert.ToDateTime(parameter[i]);
+                                command.Parameters.Add(new SqlParameter(item, dtData.Date) {
+                                   DbType =DbType.Date
+                                });
+                                i++;
+                            } else
+                            {
+                                command.Parameters.AddWithValue(item, parameter[i]);
+                                i++;
+                            }  
+                            
                         }
                     }
                 }

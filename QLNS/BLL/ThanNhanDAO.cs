@@ -16,7 +16,7 @@ namespace QLNS.BLL
         public ThanNhanDAO()
         {
 
-            string connString = @"Data Source=DESKTOP-34CKI58\HOAI;Initial Catalog=QLNS;Integrated Security=True";
+            string connString = @"Data Source=QUANG\SQLEXPRESS;Initial Catalog=QLNS;Integrated Security=True";
 
             conn.ConnectionString = connString;
             conn.Open();
@@ -41,7 +41,7 @@ namespace QLNS.BLL
 
         public List<ThanNhan> TimTN(long a)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC TimTN @MaNV", new object[] { a});
+            DataTable data = DataProvider.Instance.ExecuteQuery("select * from ThanNhan where MaTN like @MaTN ", new object[] { a});
             List<ThanNhan> list = new List<ThanNhan>();
             foreach (DataRow d in data.Rows)
             {
@@ -53,18 +53,14 @@ namespace QLNS.BLL
         public static bool Insert(ThanNhan cc)
         {
             int result;
-
-            ThanNhan nv = new ThanNhan();
-            result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemTN @MaNV , @HoTen , @NgaySinh , @SDT", new object[] { cc.MaNV, cc.HoTen, cc.NgaySinh, cc.SDT });
+            result = DataProvider.Instance.ExecuteNonQuery("EXEC ThemTN @MaNV , @HoTen , @NgaySinh , @SDT", new object[] { cc.MaNV, cc.HoTen, cc.NgaySinh.Date, cc.SDT });
 
             return result > 0;
         }
         public static bool Update(ThanNhan cc)
         {
-            int result;
-
-            ThanNhan nv = new ThanNhan();
-            result = DataProvider.Instance.ExecuteNonQuery("EXEC SuaTN @MaNV , @HoTen , @NgaySinh , @SDT , @MaTN", new object[] { cc.MaNV, cc.HoTen, cc.NgaySinh, cc.SDT,cc.MaTN });
+           int result;
+            result = DataProvider.Instance.ExecuteNonQuery("EXEC SuaTN @MaNV , @HoTen , @NgaySinh , @SDT , @MaTN", new object[] { cc.MaNV, cc.HoTen, cc.NgaySinh, cc.SDT, cc.MaTN });
 
             return result > 0;
         }

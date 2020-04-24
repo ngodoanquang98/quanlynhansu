@@ -20,7 +20,7 @@ namespace QLNS.GUI
         public FrmChamCong()
         {
             InitializeComponent();
-            string connString = @"Data Source=DESKTOP-34CKI58\HOAI;Initial Catalog=QLNS;Integrated Security=True";
+            string connString = @"Data Source=QUANG\SQLEXPRESS;Initial Catalog=QLNS;Integrated Security=True";
             sqlConnection.ConnectionString = connString;
             sqlConnection.Open();
             SqlDataAdapter adapter = new SqlDataAdapter("SELECT MaCa,TenCa FROM Ca", sqlConnection);
@@ -29,8 +29,8 @@ namespace QLNS.GUI
             cbbCa.DisplayMember = "TenCa";
             cbbCa.ValueMember = "MaCa";
             cbbCa.DataSource = dt;
-            if (DateTime.Now.Hour < 18 || DateTime.Now.Hour > 6) cbbCa.SelectedValue = 0;
-            else cbbCa.SelectedValue = 1;
+            if (DateTime.Now.Hour < 18 && DateTime.Now.Hour > 6) cbbCa.SelectedValue = 1;
+            else cbbCa.SelectedValue = 0;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -63,25 +63,31 @@ namespace QLNS.GUI
             frm.Show();
             this.Hide();
         }
-
+    
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            if (txtMaNV.Text == null)
+            try
             {
-                MessageBox.Show("Bạn phải nhập đầy đủ thông tin!");
-                return;
+                if (txtMaNV.Text == null)
+                {
+                    MessageBox.Show("Bạn phải nhập đầy đủ thông tin!");
+                    return;
+                }
+                int b = 0;
+                long c;
+                int.TryParse(cbbCa.SelectedIndex.ToString(), out b);
+                long.TryParse(txtMaNV.Text, out c);
+                ChamCong cc = new ChamCong(1, dtpNgay.Value, b, c);
+                ChamCongDAO dao = new ChamCongDAO();
+                if (!dao.Insert(cc)) MessageBox.Show("Sai !");
+                else MessageBox.Show("Thêm thành công!");
+                txtMaNV.Text = "";
+            }catch(Exception ex)
+            {
+                MessageBox.Show("không có sinh ma sinh viên nào");
             }
-            int b;
-            long c;
-            int.TryParse(cbbCa.Text, out b);
-            long.TryParse(txtMaNV.Text, out c);
-            ChamCong cc = new ChamCong(0, dtpNgay.Value, b, c);
-            ChamCongDAO dao = new ChamCongDAO();
-            if (!dao.Insert(cc)) MessageBox.Show("Sai cmnr!");
-            else MessageBox.Show("Thêm thành công!");
-            txtMaNV.Text = "";
         }
-
+    
         private void TabControl1_Click(object sender, EventArgs e)
         {
             ListCC.DataSource = ChamCongDAO.Instance.LayDL(DateTime.Now);
@@ -98,10 +104,22 @@ namespace QLNS.GUI
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
             long a;
-            long.TryParse(textBox1.Text, out a);
-            ListCC.DataSource = ChamCongDAO.Instance.LayDL(DateTime.Now);
-            dataGridView1.DataSource = ListCC;
-            dataGridView1.Refresh();
+            if (long.TryParse(textBox1.Text, out a))
+            {
+                ListCC.DataSource = ChamCongDAO.Instance.TimNV(a);
+                dataGridView1.DataSource = ListCC;
+                dataGridView1.Refresh();
+            }
+        }
+
+        private void FrmChamCong_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

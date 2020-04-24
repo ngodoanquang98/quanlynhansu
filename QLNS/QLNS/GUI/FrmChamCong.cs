@@ -1,0 +1,77 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using QLNS.DAL;
+using QLNS.BLL;
+
+namespace QLNS.GUI
+{
+    public partial class FrmChamCong : Form
+    {
+        SqlConnection sqlConnection = new SqlConnection();
+        public FrmChamCong()
+        {
+            InitializeComponent();
+            string connString = @"Data Source=DESKTOP-34CKI58\HOAI;Initial Catalog=QLNS;Integrated Security=True";
+            sqlConnection.ConnectionString = connString;
+            sqlConnection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT MaCa,TenCa FROM Ca", sqlConnection);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            cbbCa.DisplayMember = "TenCa";
+            cbbCa.ValueMember = "MaCa";
+            cbbCa.DataSource = dt;
+            if (DateTime.Now.Hour < 18 || DateTime.Now.Hour > 6) cbbCa.SelectedValue = 0;
+            else cbbCa.SelectedValue = 1;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnTrangChu_Click(object sender, EventArgs e)
+        {
+            Form frm = new FrmChinh();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnQLNS_Click(object sender, EventArgs e)
+        {
+            Form frm = new FrmQLNS();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnLuong_Click(object sender, EventArgs e)
+        {
+            Form frm = new FrmLuong();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void BtnSubmit_Click(object sender, EventArgs e)
+        {
+            if(txtMaNV.Text == null)
+            {
+                MessageBox.Show("Bạn phải nhập đầy đủ thông tin!");
+                return;
+            }
+            int b;
+            long c;
+            int.TryParse(cbbCa.Text, out b);
+            long.TryParse(txtMaNV.Text, out c);
+            ChamCong cc = new ChamCong(0, dtpNgay.Value, b, c);
+            ChamCongDAO dao = new ChamCongDAO();
+            if(!dao.Insert(cc)) MessageBox.Show("Sai cmnr!") ;
+        }
+    }
+}

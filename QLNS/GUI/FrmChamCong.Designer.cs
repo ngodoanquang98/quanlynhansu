@@ -78,131 +78,84 @@
             this.panel3.Controls.Add(this.btnQLNS);
             this.panel3.Controls.Add(this.btnTrangChu);
             this.panel3.Controls.Add(this.btnExit);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(812, 38);
-            this.panel3.TabIndex = 13;
             // 
             // btnLuong
             // 
             this.btnLuong.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnLuong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.btnLuong, "btnLuong");
             this.btnLuong.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnLuong.FlatAppearance.BorderSize = 0;
             this.btnLuong.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnLuong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.btnLuong.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnLuong.Location = new System.Drawing.Point(496, 3);
             this.btnLuong.Name = "btnLuong";
-            this.btnLuong.Size = new System.Drawing.Size(153, 34);
-            this.btnLuong.TabIndex = 18;
-            this.btnLuong.Text = "Quản lý lương";
             this.btnLuong.UseVisualStyleBackColor = false;
             this.btnLuong.Click += new System.EventHandler(this.btnLuong_Click);
             // 
             // btnChamCong
             // 
             this.btnChamCong.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnChamCong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.btnChamCong, "btnChamCong");
             this.btnChamCong.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnChamCong.FlatAppearance.BorderSize = 0;
             this.btnChamCong.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnChamCong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChamCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.btnChamCong.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnChamCong.Location = new System.Drawing.Point(332, 3);
             this.btnChamCong.Name = "btnChamCong";
-            this.btnChamCong.Size = new System.Drawing.Size(158, 34);
-            this.btnChamCong.TabIndex = 17;
-            this.btnChamCong.Text = "Chấm công";
             this.btnChamCong.UseVisualStyleBackColor = false;
             // 
             // btnQLNS
             // 
             this.btnQLNS.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnQLNS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.btnQLNS, "btnQLNS");
             this.btnQLNS.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnQLNS.FlatAppearance.BorderSize = 0;
             this.btnQLNS.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnQLNS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLNS.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.btnQLNS.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnQLNS.Location = new System.Drawing.Point(154, 3);
             this.btnQLNS.Name = "btnQLNS";
-            this.btnQLNS.Size = new System.Drawing.Size(176, 34);
-            this.btnQLNS.TabIndex = 16;
-            this.btnQLNS.Text = "Quản lý nhân sự";
             this.btnQLNS.UseVisualStyleBackColor = false;
             this.btnQLNS.Click += new System.EventHandler(this.btnQLNS_Click);
             // 
             // btnTrangChu
             // 
             this.btnTrangChu.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnTrangChu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.btnTrangChu, "btnTrangChu");
             this.btnTrangChu.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnTrangChu.FlatAppearance.BorderSize = 0;
             this.btnTrangChu.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnTrangChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrangChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.btnTrangChu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnTrangChu.Location = new System.Drawing.Point(3, 3);
             this.btnTrangChu.Name = "btnTrangChu";
-            this.btnTrangChu.Size = new System.Drawing.Size(145, 34);
-            this.btnTrangChu.TabIndex = 15;
-            this.btnTrangChu.Text = "Trang chủ";
             this.btnTrangChu.UseVisualStyleBackColor = false;
             this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
             // btnExit
             // 
-            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.btnExit, "btnExit");
             this.btnExit.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnExit.Location = new System.Drawing.Point(777, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(0);
-            this.btnExit.MaximumSize = new System.Drawing.Size(35, 34);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Padding = new System.Windows.Forms.Padding(2);
-            this.btnExit.Size = new System.Drawing.Size(35, 34);
-            this.btnExit.TabIndex = 4;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 40F);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(3, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(489, 61);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Quản lý chấm công";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 38);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(812, 71);
-            this.panel1.TabIndex = 15;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Arial", 13F);
-            this.tabControl1.Location = new System.Drawing.Point(0, 109);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(812, 364);
-            this.tabControl1.TabIndex = 16;
             this.tabControl1.Click += new System.EventHandler(this.TabControl1_Click);
             // 
             // tabPage1
@@ -210,89 +163,56 @@
             this.tabPage1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.btnSubmit);
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(804, 332);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Chấm công";
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Controls.Add(this.cbbCa);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtMaNV);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.dtpNgay);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(82, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(605, 214);
-            this.panel2.TabIndex = 5;
             // 
             // cbbCa
             // 
             this.cbbCa.FormattingEnabled = true;
-            this.cbbCa.Location = new System.Drawing.Point(270, 140);
+            resources.ApplyResources(this.cbbCa, "cbbCa");
             this.cbbCa.Name = "cbbCa";
-            this.cbbCa.Size = new System.Drawing.Size(198, 27);
-            this.cbbCa.TabIndex = 12;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(138, 141);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 21);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Ca                 :";
             // 
             // txtMaNV
             // 
-            this.txtMaNV.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtMaNV.Location = new System.Drawing.Point(270, 97);
+            resources.ApplyResources(this.txtMaNV, "txtMaNV");
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(200, 27);
-            this.txtMaNV.TabIndex = 10;
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(134, 56);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 21);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Ngày              :";
             // 
             // dtpNgay
             // 
-            this.dtpNgay.Anchor = System.Windows.Forms.AnchorStyles.None;
+            resources.ApplyResources(this.dtpNgay, "dtpNgay");
             this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgay.Location = new System.Drawing.Point(268, 50);
             this.dtpNgay.Name = "dtpNgay";
-            this.dtpNgay.Size = new System.Drawing.Size(200, 27);
-            this.dtpNgay.TabIndex = 8;
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(134, 100);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 21);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Mã nhân viên :";
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSubmit.Location = new System.Drawing.Point(375, 258);
+            resources.ApplyResources(this.btnSubmit, "btnSubmit");
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(64, 35);
-            this.btnSubmit.TabIndex = 4;
-            this.btnSubmit.Text = "OK";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
@@ -301,21 +221,14 @@
             this.tabPage2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage2.Controls.Add(this.panel5);
             this.tabPage2.Controls.Add(this.panel4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(804, 332);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Danh sách chấm công";
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.dataGridView1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 38);
+            resources.ApplyResources(this.panel5, "panel5");
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(798, 291);
-            this.panel5.TabIndex = 5;
             // 
             // dataGridView1
             // 
@@ -326,34 +239,32 @@
             this.MaCa,
             this.MaNV,
             this.Ngay});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(798, 291);
-            this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // MaChamCong
             // 
             this.MaChamCong.DataPropertyName = "MaChamCong";
-            this.MaChamCong.HeaderText = "Mã chấm công";
+            resources.ApplyResources(this.MaChamCong, "MaChamCong");
             this.MaChamCong.Name = "MaChamCong";
             // 
             // MaCa
             // 
             this.MaCa.DataPropertyName = "MaCa";
-            this.MaCa.HeaderText = "Mã Ca";
+            resources.ApplyResources(this.MaCa, "MaCa");
             this.MaCa.Name = "MaCa";
             // 
             // MaNV
             // 
             this.MaNV.DataPropertyName = "MaNV";
-            this.MaNV.HeaderText = "Mã nhân viên";
+            resources.ApplyResources(this.MaNV, "MaNV");
             this.MaNV.Name = "MaNV";
             // 
             // Ngay
             // 
             this.Ngay.DataPropertyName = "Ngay";
-            this.Ngay.HeaderText = "Ngày";
+            resources.ApplyResources(this.Ngay, "Ngay");
             this.Ngay.Name = "Ngay";
             // 
             // panel4
@@ -362,59 +273,42 @@
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.dateTimePicker2);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(798, 35);
-            this.panel4.TabIndex = 4;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(369, 4);
+            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(297, 27);
-            this.textBox1.TabIndex = 5;
             this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(220, 9);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(142, 21);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Tìm kiếm Mã NV";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 9);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 21);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Ngày";
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(63, 5);
+            resources.ApplyResources(this.dateTimePicker2, "dateTimePicker2");
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(140, 27);
-            this.dateTimePicker2.TabIndex = 2;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.DateTimePicker2_ValueChanged);
             // 
             // FrmChamCong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 473);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmChamCong";
-            this.Text = "FrmChamCong";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Load += new System.EventHandler(this.FrmChamCong_Load);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

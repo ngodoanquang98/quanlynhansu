@@ -60,5 +60,24 @@ namespace QLNS
             MessageBox.Show("Vui lòng nhập lại tài khoản!");
         }
 
+        private void TxtTenDN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) txtMK.Focus();
+        }
+
+        private void TxtMK_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) btnEnter.Focus();
+        }
+
+        private void FrmDangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -55,14 +55,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ChamCongDAO.cs" />
+    <Compile Include="BLL\CongTyDAO.cs" />
     <Compile Include="BLL\DataProvider.cs" />
-    <Compile Include="BLL\NhanVienBLL.cs" />
+    <Compile Include="BLL\HopDongDAO.cs" />
+    <Compile Include="BLL\LuongDAO.cs" />
+    <Compile Include="BLL\NhanVienDAO.cs" />
+    <Compile Include="BLL\NhatKyDAO.cs" />
+    <Compile Include="BLL\PhongBanDAO.cs" />
+    <Compile Include="BLL\ThanNhanDAO.cs" />
     <Compile Include="DAL\Ca.cs" />
     <Compile Include="DAL\ChamCong.cs" />
-    <Compile Include="DAL\ChiTietCV.cs" />
     <Compile Include="DAL\ChiTietLuong.cs" />
     <Compile Include="DAL\ChiTietTT.cs" />
     <Compile Include="DAL\ChucVU.cs" />
+    <Compile Include="DAL\CongTy.cs" />
+    <Compile Include="DAL\HopDong.cs" />
     <Compile Include="DAL\LuongCoBan.cs" />
     <Compile Include="DAL\NguoiDung.cs" />
     <Compile Include="DAL\NhanVien.cs" />
@@ -106,6 +114,12 @@
     <Compile Include="GUI\FrmQLNS.Designer.cs">
       <DependentUpon>FrmQLNS.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\NhatKyHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NhatKyHD.Designer.cs">
+      <DependentUpon>NhatKyHD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\FrmChamCong.resx">
@@ -126,6 +140,9 @@
     <EmbeddedResource Include="GUI\FrmQLNS.resx">
       <DependentUpon>FrmQLNS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhatKyHD.resx">
+      <DependentUpon>NhatKyHD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -134,6 +151,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -148,6 +166,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

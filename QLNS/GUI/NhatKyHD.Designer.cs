@@ -50,64 +50,37 @@
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 38);
-            this.panel1.TabIndex = 0;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            resources.ApplyResources(this.dateTimePicker1, "dateTimePicker1");
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(482, 6);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(122, 23);
-            this.dateTimePicker1.TabIndex = 10;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
             // 
             // lab
             // 
-            this.lab.AutoSize = true;
-            this.lab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lab.Location = new System.Drawing.Point(361, 9);
+            resources.ApplyResources(this.lab, "lab");
             this.lab.Name = "lab";
-            this.lab.Size = new System.Drawing.Size(106, 17);
-            this.lab.TabIndex = 9;
-            this.lab.Text = "Tìm theo ngày :";
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox1.Location = new System.Drawing.Point(105, 6);
+            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 23);
-            this.textBox1.TabIndex = 8;
             this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(33, 9);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 17);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Tìm kiếm";
             // 
             // btnExit
             // 
-            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.btnExit, "btnExit");
             this.btnExit.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnExit.Location = new System.Drawing.Point(765, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(0);
-            this.btnExit.MaximumSize = new System.Drawing.Size(35, 34);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Padding = new System.Windows.Forms.Padding(2);
-            this.btnExit.Size = new System.Drawing.Size(35, 34);
-            this.btnExit.TabIndex = 6;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
@@ -119,41 +92,36 @@
             this.MaNK,
             this.MaND,
             this.Ngay});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 38);
+            resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 412);
-            this.dataGridView1.TabIndex = 1;
             // 
             // MaNK
             // 
             this.MaNK.DataPropertyName = "MaNK";
-            this.MaNK.HeaderText = "Mã nhật ký";
+            resources.ApplyResources(this.MaNK, "MaNK");
             this.MaNK.Name = "MaNK";
             // 
             // MaND
             // 
             this.MaND.DataPropertyName = "MaND";
-            this.MaND.HeaderText = "Mã người dùng";
+            resources.ApplyResources(this.MaND, "MaND");
             this.MaND.Name = "MaND";
             // 
             // Ngay
             // 
             this.Ngay.DataPropertyName = "Ngay";
-            this.Ngay.HeaderText = "Ngày";
+            resources.ApplyResources(this.Ngay, "Ngay");
             this.Ngay.Name = "Ngay";
             // 
             // NhatKyHD
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NhatKyHD";
-            this.Text = "NhatKyHD";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Load += new System.EventHandler(this.NhatKyHD_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

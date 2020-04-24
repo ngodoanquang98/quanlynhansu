@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDangNhap));
-            this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -45,18 +44,6 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 40F);
-            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(422, 61);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Quản lý nhân sự";
-            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
@@ -65,7 +52,7 @@
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnExit.Location = new System.Drawing.Point(739, 0);
+            this.btnExit.Location = new System.Drawing.Point(475, 0);
             this.btnExit.Margin = new System.Windows.Forms.Padding(0);
             this.btnExit.MaximumSize = new System.Drawing.Size(35, 34);
             this.btnExit.Name = "btnExit";
@@ -83,7 +70,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(203, 86);
+            this.panel1.Location = new System.Drawing.Point(38, 37);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(434, 317);
             this.panel1.TabIndex = 2;
@@ -111,6 +98,7 @@
             this.txtMK.PasswordChar = '*';
             this.txtMK.Size = new System.Drawing.Size(200, 29);
             this.txtMK.TabIndex = 3;
+            this.txtMK.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtMK_KeyPress);
             // 
             // txtTenDN
             // 
@@ -119,6 +107,7 @@
             this.txtTenDN.Name = "txtTenDN";
             this.txtTenDN.Size = new System.Drawing.Size(200, 29);
             this.txtTenDN.TabIndex = 2;
+            this.txtTenDN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTenDN_KeyPress);
             // 
             // label4
             // 
@@ -154,12 +143,12 @@
             // btnEnter
             // 
             this.btnEnter.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnEnter.FlatAppearance.BorderSize = 0;
+            this.btnEnter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnEnter.Location = new System.Drawing.Point(165, 37);
+            this.btnEnter.Location = new System.Drawing.Point(0, 0);
             this.btnEnter.Name = "btnEnter";
-            this.btnEnter.Size = new System.Drawing.Size(108, 29);
+            this.btnEnter.Size = new System.Drawing.Size(432, 83);
             this.btnEnter.TabIndex = 0;
             this.btnEnter.Text = "Đăng nhập";
             this.btnEnter.UseVisualStyleBackColor = false;
@@ -181,29 +170,27 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(774, 466);
+            this.ClientSize = new System.Drawing.Size(510, 400);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Load += new System.EventHandler(this.FrmDangNhap_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEnter;

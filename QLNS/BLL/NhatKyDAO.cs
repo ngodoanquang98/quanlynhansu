@@ -16,7 +16,7 @@ namespace QLNS.BLL
         public NhatKyDAO()
         {
 
-            string connString = @"Data Source=DESKTOP-34CKI58\HOAI;Initial Catalog=QLNS;Integrated Security=True";
+            string connString = @"Data Source=QUANG\SQLEXPRESS;Initial Catalog=QLNS;Integrated Security=True";
 
             conn.ConnectionString = connString;
             conn.Open();
@@ -37,11 +37,11 @@ namespace QLNS.BLL
             get { if (instance == null) instance = new NhatKyDAO(); return instance; }
             private set { instance = value; }
         }
-        public bool Insert(long cc)
+        public bool Insert(long c)
         {
             int result;
             NhatKy nv = new NhatKy();
-            result = DataProvider.Instance.ExecuteNonQuery("exec ThemNK @Ma ", new object[] { cc });
+            result = DataProvider.Instance.ExecuteNonQuery("exec ThemNK @Ma ", new object[] { c });
             return result > 0;
         }
         public List<NhatKy> TimKiemMa(long a)

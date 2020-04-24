@@ -16,7 +16,7 @@ namespace QLNS.BLL
         public CongTyDAO()
         {
 
-            string connString = @"Data Source=DESKTOP-34CKI58\HOAI;Initial Catalog=QLNS;Integrated Security=True";
+            string connString = @"Data Source=QUANG\SQLEXPRESS;Initial Catalog=QLNS;Integrated Security=True";
 
             conn.ConnectionString = connString;
             conn.Open();

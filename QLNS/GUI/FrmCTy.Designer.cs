@@ -84,97 +84,62 @@
             this.panel1.Controls.Add(this.btnQLNS);
             this.panel1.Controls.Add(this.btnTrangChu);
             this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(983, 38);
-            this.panel1.TabIndex = 11;
             // 
             // btnLuong
             // 
             this.btnLuong.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnLuong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.btnLuong, "btnLuong");
             this.btnLuong.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnLuong.FlatAppearance.BorderSize = 0;
             this.btnLuong.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnLuong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.btnLuong.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnLuong.Location = new System.Drawing.Point(493, 4);
             this.btnLuong.Name = "btnLuong";
-            this.btnLuong.Size = new System.Drawing.Size(153, 34);
-            this.btnLuong.TabIndex = 18;
-            this.btnLuong.Text = "Quản lý lương";
             this.btnLuong.UseVisualStyleBackColor = false;
             this.btnLuong.Click += new System.EventHandler(this.btnLuong_Click);
             // 
             // btnChamCong
             // 
             this.btnChamCong.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnChamCong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.btnChamCong, "btnChamCong");
             this.btnChamCong.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnChamCong.FlatAppearance.BorderSize = 0;
             this.btnChamCong.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnChamCong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChamCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.btnChamCong.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnChamCong.Location = new System.Drawing.Point(329, 4);
             this.btnChamCong.Name = "btnChamCong";
-            this.btnChamCong.Size = new System.Drawing.Size(158, 34);
-            this.btnChamCong.TabIndex = 17;
-            this.btnChamCong.Text = "Chấm công";
             this.btnChamCong.UseVisualStyleBackColor = false;
             this.btnChamCong.Click += new System.EventHandler(this.btnChamCong_Click);
             // 
             // btnQLNS
             // 
             this.btnQLNS.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnQLNS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.btnQLNS, "btnQLNS");
             this.btnQLNS.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnQLNS.FlatAppearance.BorderSize = 0;
             this.btnQLNS.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnQLNS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLNS.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.btnQLNS.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnQLNS.Location = new System.Drawing.Point(151, 4);
             this.btnQLNS.Name = "btnQLNS";
-            this.btnQLNS.Size = new System.Drawing.Size(176, 34);
-            this.btnQLNS.TabIndex = 16;
-            this.btnQLNS.Text = "Quản lý nhân sự";
             this.btnQLNS.UseVisualStyleBackColor = false;
             this.btnQLNS.Click += new System.EventHandler(this.btnQLNS_Click);
             // 
             // btnTrangChu
             // 
             this.btnTrangChu.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnTrangChu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.btnTrangChu, "btnTrangChu");
             this.btnTrangChu.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnTrangChu.FlatAppearance.BorderSize = 0;
             this.btnTrangChu.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.btnTrangChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrangChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.btnTrangChu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnTrangChu.Location = new System.Drawing.Point(0, 4);
             this.btnTrangChu.Name = "btnTrangChu";
-            this.btnTrangChu.Size = new System.Drawing.Size(145, 34);
-            this.btnTrangChu.TabIndex = 15;
-            this.btnTrangChu.Text = "Trang chủ";
             this.btnTrangChu.UseVisualStyleBackColor = false;
             this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
             // btnExit
             // 
-            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.btnExit, "btnExit");
             this.btnExit.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnExit.Location = new System.Drawing.Point(948, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(0);
-            this.btnExit.MaximumSize = new System.Drawing.Size(35, 34);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Padding = new System.Windows.Forms.Padding(2);
-            this.btnExit.Size = new System.Drawing.Size(35, 34);
-            this.btnExit.TabIndex = 4;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
@@ -183,50 +148,36 @@
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Font = new System.Drawing.Font("Arial", 15F);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.Location = new System.Drawing.Point(0, 38);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(983, 516);
-            this.panel2.TabIndex = 12;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.tabControl1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 72);
+            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(983, 444);
-            this.panel4.TabIndex = 1;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(983, 444);
-            this.tabControl1.TabIndex = 0;
             this.tabControl1.Click += new System.EventHandler(this.TabControl1_Click);
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tabPage1.BackColor = System.Drawing.SystemColors.ControlText;
             this.tabPage1.Controls.Add(this.panel5);
             this.tabPage1.Controls.Add(this.btnLuu);
-            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(975, 408);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Công ty";
             // 
             // panel5
             // 
-            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            resources.ApplyResources(this.panel5, "panel5");
             this.panel5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.txtHotLine);
@@ -237,92 +188,52 @@
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.label2);
-            this.panel5.Location = new System.Drawing.Point(193, 11);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(588, 310);
-            this.panel5.TabIndex = 13;
             // 
             // txtHotLine
             // 
-            this.txtHotLine.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtHotLine.Location = new System.Drawing.Point(236, 230);
+            resources.ApplyResources(this.txtHotLine, "txtHotLine");
             this.txtHotLine.Name = "txtHotLine";
-            this.txtHotLine.Size = new System.Drawing.Size(276, 30);
-            this.txtHotLine.TabIndex = 15;
             // 
             // txtCT
             // 
-            this.txtCT.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCT.Location = new System.Drawing.Point(236, 183);
+            resources.ApplyResources(this.txtCT, "txtCT");
             this.txtCT.Name = "txtCT";
-            this.txtCT.Size = new System.Drawing.Size(276, 30);
-            this.txtCT.TabIndex = 14;
             // 
             // txtDC
             // 
-            this.txtDC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDC.Location = new System.Drawing.Point(236, 98);
-            this.txtDC.Multiline = true;
+            resources.ApplyResources(this.txtDC, "txtDC");
             this.txtDC.Name = "txtDC";
-            this.txtDC.Size = new System.Drawing.Size(276, 61);
-            this.txtDC.TabIndex = 13;
             // 
             // txtTen
             // 
-            this.txtTen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTen.Location = new System.Drawing.Point(236, 49);
+            resources.ApplyResources(this.txtTen, "txtTen");
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(276, 30);
-            this.txtTen.TabIndex = 12;
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(74, 233);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 23);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Hot line       :";
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(74, 186);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 23);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Chủ tịch      :";
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(74, 96);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 23);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Địa chỉ        :";
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 49);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 23);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Tên công ty :";
             // 
             // btnLuu
             // 
-            this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnLuu.Location = new System.Drawing.Point(449, 368);
+            resources.ApplyResources(this.btnLuu, "btnLuu");
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 30);
-            this.btnLuu.TabIndex = 12;
-            this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             // 
             // tabPage2
@@ -330,21 +241,14 @@
             this.tabPage2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.tabPage2.Controls.Add(this.panel7);
             this.tabPage2.Controls.Add(this.panel6);
-            this.tabPage2.Location = new System.Drawing.Point(4, 32);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(975, 408);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Phòng ban";
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.dataGridView1);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(340, 3);
+            resources.ApplyResources(this.panel7, "panel7");
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(632, 402);
-            this.panel7.TabIndex = 1;
             // 
             // dataGridView1
             // 
@@ -353,24 +257,22 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaPB,
             this.TenPB});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(632, 402);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.DataGridView1_DoubleClick);
             // 
             // MaPB
             // 
             this.MaPB.DataPropertyName = "MaPB";
-            this.MaPB.HeaderText = "Mã phòng ban";
+            resources.ApplyResources(this.MaPB, "MaPB");
             this.MaPB.Name = "MaPB";
             // 
             // TenPB
             // 
             this.TenPB.DataPropertyName = "TenPB";
-            this.TenPB.HeaderText = "Tên phòng ban";
+            resources.ApplyResources(this.TenPB, "TenPB");
             this.TenPB.Name = "TenPB";
             // 
             // panel6
@@ -381,114 +283,72 @@
             this.panel6.Controls.Add(this.lblID);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.label6);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel6.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.panel6, "panel6");
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(337, 402);
-            this.panel6.TabIndex = 0;
             // 
             // btnThem
             // 
-            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            resources.ApplyResources(this.btnThem, "btnThem");
             this.btnThem.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnThem.FlatAppearance.BorderSize = 0;
-            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnThem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnThem.Location = new System.Drawing.Point(73, 180);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 13;
-            this.btnThem.Text = "Thêm mới";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.BtnThem_Click);
             // 
             // btnLuuTN
             // 
-            this.btnLuuTN.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            resources.ApplyResources(this.btnLuuTN, "btnLuuTN");
             this.btnLuuTN.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnLuuTN.FlatAppearance.BorderSize = 0;
-            this.btnLuuTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuuTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnLuuTN.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnLuuTN.Location = new System.Drawing.Point(193, 180);
             this.btnLuuTN.Name = "btnLuuTN";
-            this.btnLuuTN.Size = new System.Drawing.Size(75, 23);
-            this.btnLuuTN.TabIndex = 12;
-            this.btnLuuTN.Text = "Lưu";
             this.btnLuuTN.UseVisualStyleBackColor = false;
             this.btnLuuTN.Click += new System.EventHandler(this.BtnLuuTN_Click);
             // 
             // txtTenPB
             // 
-            this.txtTenPB.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTenPB.Location = new System.Drawing.Point(154, 125);
+            resources.ApplyResources(this.txtTenPB, "txtTenPB");
             this.txtTenPB.Name = "txtTenPB";
-            this.txtTenPB.Size = new System.Drawing.Size(154, 30);
-            this.txtTenPB.TabIndex = 3;
             // 
             // lblID
             // 
-            this.lblID.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(150, 88);
+            resources.ApplyResources(this.lblID, "lblID");
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(62, 23);
-            this.lblID.TabIndex = 2;
-            this.lblID.Text = "label8";
+            this.lblID.Click += new System.EventHandler(this.lblID_Click);
             // 
             // label7
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(40, 128);
+            resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 23);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Tên PB";
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(40, 88);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 23);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Mã PB";
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(983, 72);
-            this.panel3.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 40F);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(3, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(438, 61);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Thông tin công ty";
             // 
             // FrmCTy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(983, 554);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.Control;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCTy";
-            this.Text = "FrmCTy";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Load += new System.EventHandler(this.FrmCTy_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
